@@ -3,33 +3,27 @@ import { Button, StyleSheet, Text, View } from "react-native";
 
 const Task = (props) => {
     return(
-        <View>
+        <View style={styles.container}>
         <Text>{props.title}</Text>
         <Text>{props.text}</Text>
 
         <View>
-            <Button>{"Realizada"}</Button>
-            <Button>{"Não Realizada"}</Button>
+            <Button title= "Não realizada" color="#FF415B" accessibilityLabel="Botão para marcar a tarefa como 'Não Realizada'"/>
+            <Button title= "Realizada" color="#00AA95"accessibilityLabel="Botão para marcar a tarefa como 'Realizada'"/>
         </View>
 
         </View>
     )
 }
 
-const stylesButton = StyleSheet.create({
-    button: {
-        alignContent: "center",
-        color: "#fff",
-        display: "flex",
-    }
-  });
-
 const styles = StyleSheet.create({
-    page: {
-        backgroundColor: "#000",
-        display: "flex",
-    }
-})
-  
+    container: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#C4C4C4",
+    },
+    
+    });
 
 export default Task 
