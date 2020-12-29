@@ -1,21 +1,19 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import Task from './components/Task';
+import {NavigationContainer} from '@react-navigation/native';
+import { createStackNavigator} from '@react-navigation/stack';
+import tarefasScreen from './telas/tarefas';
+import avaliacaoScreen from './telas/avaliacao';
 
-export default function App() {
+const Stack = createStackNavigator();
+
+
+export default function App(){
   return (
-    <View style={styles.container}>
-      <Task title="Escovar os dentes" text="Um bom astronauta sempre cuida primeiro dos dentes. Vamos escovar?"/>
-    </View>
-  );
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Tarefas do Dia" component={tarefasScreen}/>
+        <Stack.Screen name="Avalie sua Tarefa" component={avaliacaoScreen}/>
+      </Stack.Navigator>
+    </NavigationContainer>
+  )
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
