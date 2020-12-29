@@ -1,12 +1,12 @@
 import React from 'react';
 import { StyleSheet, Text, View , Button} from 'react-native';
 
-export default function avaliacao(){
+const Avaliacao = () => {
     return(
         <View style={styles.container}>
-            <Button title= "Bem" color="#FF415B" accessibilityLabel="Botão para marcar a tarefa como 'Não Realizada'"/>
-            <Button title= "Normal" color="#00AA95"accessibilityLabel="Botão para marcar a tarefa como 'Realizada'"/>
-            <Button title= "Ruim" color="#00AA95"accessibilityLabel="Botão para marcar a tarefa como 'Realizada'"/>
+            <Button title= "Bem" color="#00AA95" accessibilityLabel="Botão para dizer se está se sentindo 'Bem'"/>
+            <Button title= "Normal" color="#545C60"accessibilityLabel="Botão para dizer se está se sentindo 'Normal'"/>
+            <Button title= "Chateado" color="#FF415B"accessibilityLabel="Botão para dizer se está se sentindo 'Chateado'"/>
         </View>
     )
 }
@@ -18,3 +18,5 @@ const styles = StyleSheet.create({
       justifyContent: 'center',
     },
   });
+
+export default Avaliacao;

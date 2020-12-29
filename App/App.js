@@ -1,11 +1,10 @@
 import React from 'react';
-import {NavigationContainer} from '@react-navigation/native';
+import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator} from '@react-navigation/stack';
-import tarefasScreen from './telas/tarefas';
-import avaliacaoScreen from './telas/avaliacao';
+import tarefasScreen from './telas/Tarefas';
+import avaliacaoScreen from './telas/Avaliacao';
 
 const Stack = createStackNavigator();
-
 
 export default function App(){
   return (

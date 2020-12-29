@@ -1,6 +1,6 @@
 import React from "react";
 import { Button, StyleSheet, Text, View } from "react-native";
-const Task = (props) => {
+const Tarefa = (props) => {
     return(
         <View style={styles.container}>
         <Text>{props.title}</Text>
@@ -19,4 +19,4 @@ const styles = StyleSheet.create({
     
     });
 
-export default Task 
+export default Tarefa 
