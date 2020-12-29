@@ -1,9 +1,9 @@
 import React from "react";
-import { Button, StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 const Tarefa = (props) => {
     return(
         <View style={styles.container}>
-        <Text>{props.title}</Text>
+        <Text style= {styles.title}> {props.title} </Text>
         <Text>{props.text}</Text>
         </View>
     )
@@ -14,7 +14,14 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#C4C4C4",
+    display: "flex",
+    color: "#FFFFFF",
+    },
+
+    title: {
+        fontWeight: "700",
+        fontSize: "1.6em",
+        color: "FF7C48",
     },
     
     });
