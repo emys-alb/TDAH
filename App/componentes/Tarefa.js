@@ -3,8 +3,10 @@ import { StyleSheet, Text, View } from "react-native";
 const Tarefa = (props) => {
     return(
         <View style={styles.container}>
-        <Text style= {styles.title}> {props.title} </Text>
-        <Text>{props.text}</Text>
+        <Text style={styles.title}> {props.title} </Text>
+        <View style={styles.textContainer}>
+        <Text style={styles.text}>{props.text}</Text>
+        </View>
         </View>
     )
 }
@@ -15,14 +17,31 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     display: "flex",
-    color: "#FFFFFF",
     },
 
     title: {
         fontWeight: "700",
-        fontSize: "1.6em",
-        color: "FF7C48",
+        fontSize: 36,
+        color: "#FF7C48",
+        lineHeight: 28,
+        paddingBottom: 30,
+        paddingTop: 8,
     },
+
+    textContainer: {
+        padding: 8,
+        backgroundColor: "#6E76E4",
+        borderRadius: 26,
+        width: 313,
+        height: 369,
+        paddingTop: 66,
+        paddingLeft: 25,
+    },
+
+    text: {
+        color: "#FFF",
+        fontSize: 24,
+    }
     
     });
 
