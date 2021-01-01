@@ -11,13 +11,8 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: '#000',
-        alignItems: 'center',
         width: "100%"
     },
-    progressBar: {
-        backgroundColor: '#FF7C48',
-    }
-
 });
 
 export default styles;

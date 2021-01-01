@@ -6,11 +6,11 @@ import styles from '../css/componentes'
 
 const ProgressBar = () => {
     return(
-        <View>
+        <View style={styles.progressBarContainer}>
             <View style={styles.progressBar}>
-                <Animated.View style={[StyleSheet.absoluteFill], {backgroundColor: "#8BED4F", width: "20%"}}/>
+                <Animated.View style={[StyleSheet.absoluteFill], {backgroundColor: "#02A9F4", width: "33%"}}/>
             </View>
-            <Text>20%</Text>
+            <Text style={{color: "#fff", fontWeight: "bold"}}> 1/3 </Text>
         </View>
     )
 }

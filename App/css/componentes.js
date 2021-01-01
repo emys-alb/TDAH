@@ -7,7 +7,7 @@ const styles = StyleSheet.create({
         color: "#FF7C48",
         lineHeight: 28,
         paddingBottom: 30,
-        paddingTop: 8,
+        paddingTop: 20,
         justifyContent: "center"
     },
 
@@ -27,13 +27,23 @@ const styles = StyleSheet.create({
         fontSize: 20,
     },
 
+    progressBarContainer: {
+        backgroundColor: "#FF7C48",
+        flexDirection: "row",
+        justifyContent: "center",
+        alignContent: "center",
+        width: "100%",
+        height: 30,
+    },
+
     progressBar: {
         height: 20,
         width: '80%',
-        backgroundColor: 'white',
+        backgroundColor: '#C4C4C4',
         borderColor: '#000',
         borderWidth: 2,
-        borderRadius: 5, 
+        borderRadius: 5,
+        paddingTop: 15,
     },
 });
 
