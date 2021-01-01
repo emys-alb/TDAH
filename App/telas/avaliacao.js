@@ -1,5 +1,7 @@
 import React from 'react';
-import { StyleSheet, Text, View , Button} from 'react-native';
+import { View , Button} from 'react-native';
+
+import styles from '../css/telas';
 
 const Avaliacao = () => {
     return(
@@ -10,13 +12,5 @@ const Avaliacao = () => {
         </View>
     )
 }
-const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      backgroundColor: '#fff',
-      alignItems: 'center',
-      justifyContent: 'center',
-    },
-  });
 
 export default Avaliacao;
