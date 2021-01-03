@@ -42,6 +42,12 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         borderColor: '#02A9F4',
     },
+    buttonsTarefaNRealizada: {
+        display: "flex",
+        flexDirection: "row",
+        justifyContent: "space-around",
+        padding: "2%",
+    },
 });
 
 export default styles;

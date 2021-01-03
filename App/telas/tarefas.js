@@ -16,7 +16,7 @@ const Tarefas = ({ navigation }) => {
         </View>
 
         <View style={styles.buttons}>
-          <Button title= "Não realizada" color="#FF415B" accessibilityLabel="Botão para marcar a tarefa como 'Não Realizada'"/>
+          <Button title= "Não realizada" color="#FF415B" accessibilityLabel="Botão para marcar a tarefa como 'Não Realizada'"  onPress={() => navigation.navigate('Tarefa nao realizada')}/>
           <Button title= "Realizada" color="#00AA95" accessibilityLabel="Botão para marcar a tarefa como 'Realizada'" 
                   onPress={() => navigation.navigate('Avalie sua Tarefa')}/>
         </View>
