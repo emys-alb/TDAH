@@ -55,6 +55,14 @@ const styles = StyleSheet.create({
         borderRadius: 5,
         paddingTop: 15,
     },
+
+    arearDeTexto:{
+        height:"40%", 
+        borderColor: 'gray', 
+        borderWidth: 1,
+        backgroundColor: "#FFFFFF",
+        marginBottom:"15%",
+    },
 });
 
 export default styles;

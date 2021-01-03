@@ -18,7 +18,7 @@ const tarefanaorealizada = ({navigation}) => {
                          <Button title= "Continuar Tentando"color="#00AA95" accessibilityLabel="Botão para retornar a tarefa" onPress={() => navigation.navigate('Tarefas do Dia')} />
                     </View>
                     <View style={styles.buttonsAvaliacaoArea}>
-                        <Button title= "Pular Missão" color="#545C60" accessibilityLabel="Botão para pular missão" />
+                        <Button title= "Pular Missão" color="#545C60" accessibilityLabel="Botão para pular missão"  onPress={() => navigation.navigate('motivo')}/>
                     </View>
                     <View style={styles.buttonsAvaliacaoArea}>
                         <Button title= "Preciso de Ajuda" color="#FF415B" accessibilityLabel="Botão para pedir ajuda" />

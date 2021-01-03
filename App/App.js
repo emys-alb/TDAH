@@ -5,7 +5,7 @@ import tarefasScreen from './telas/tarefas';
 import avaliacaoScreen from './telas/avaliacao';
 import parabensScreen from './telas/Parabens';
 import tarefanrealizadaScreen from "./telas/tarefanaorealizada";
-
+import motivonaorealizarScreen from "./telas/motivotarefanaorealizada";
 const Stack = createStackNavigator();
 
 export default function App(){
@@ -18,6 +18,7 @@ export default function App(){
           <Stack.Screen name="Avalie sua Tarefa" component={avaliacaoScreen}/>
           <Stack.Screen name="Parabens" component={parabensScreen}/>
           <Stack.Screen name="Tarefa nao realizada" component={tarefanrealizadaScreen}/>
+          <Stack.Screen name="motivo" component={motivonaorealizarScreen}/>
         </Stack.Navigator>
     </NavigationContainer>
   )
