@@ -26,6 +26,15 @@ const styles = StyleSheet.create({
         color: "#FFF",
         fontSize: 20,
     },
+    titleAvaliacao: {
+        textAlign:"center",
+        fontWeight: "700",
+        fontSize: 30,
+        color: "#FFFFFF",
+        paddingBottom: 30,
+        paddingTop: 20,
+       
+    },
 
     progressBarContainer: {
         backgroundColor: "#FF7C48",
@@ -34,6 +43,7 @@ const styles = StyleSheet.create({
         alignContent: "center",
         width: "100%",
         height: 30,
+        padding: "2%",
     },
 
     progressBar: {
