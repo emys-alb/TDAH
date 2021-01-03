@@ -5,12 +5,12 @@ import styles from '../css/componentes'
 
 const Tarefa = (props) => {
     return(
-        <View style={styles.container}>
+        <View>
         <Text style={styles.titleTarefa}> {props.title} </Text>
         <View style={styles.textContainerTarefa}>
         <Text style={styles.textTarefa}>{props.text}</Text>
         </View>
-        </View>
+       </View>
     )
 }
 
