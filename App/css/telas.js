@@ -15,6 +15,7 @@ const styles = StyleSheet.create({
         height: "100%",
         marginTop: "8%",
     },
+
     buttonsContainerArea:{
         padding: 8,
         backgroundColor: "#6E76E4",
@@ -30,8 +31,17 @@ const styles = StyleSheet.create({
     buttonsAvaliacaoArea:{
         marginBottom:"4%",
     },
+    parabensCircle: {
+        position: 'absolute',
+        width: 272,
+        height: 259,
+        paddingLeft: 45,
+        paddingTop: 39,
 
-    
+        backgroundColor: '#C4C4C4',
+        borderRadius: 10,
+        borderColor: '#02A9F4',
+    },
 });
 
 export default styles;
