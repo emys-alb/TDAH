@@ -21,7 +21,7 @@ const tarefanaorealizada = ({navigation}) => {
                         <Button title= "Pular Missão" color="#545C60" accessibilityLabel="Botão para pular missão"  onPress={() => navigation.navigate('motivo')}/>
                     </View>
                     <View style={styles.buttonsAvaliacaoArea}>
-                        <Button title= "Preciso de Ajuda" color="#FF415B" accessibilityLabel="Botão para pedir ajuda" />
+                        <Button title= "Preciso de Ajuda" color="#FF415B" accessibilityLabel="Botão para pedir ajuda" onPress={() => navigation.navigate('ajuda')} />
                     </View>
                 </View>
             </View>

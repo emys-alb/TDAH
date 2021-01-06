@@ -1,4 +1,4 @@
-import { StyleSheet } from "react-native"
+import { StyleSheet,Dimensions } from "react-native"
 
 const styles = StyleSheet.create({
     buttons: {
@@ -31,6 +31,10 @@ const styles = StyleSheet.create({
     buttonsAvaliacaoArea:{
         marginBottom:"4%",
     },
+    buttonsAjudaArea:{
+        marginLeft:44,
+        marginRight:44,
+    },
     parabensCircle: {
         position: 'absolute',
         width: 272,
@@ -41,6 +45,23 @@ const styles = StyleSheet.create({
         backgroundColor: '#C4C4C4',
         borderRadius: 10,
         borderColor: '#02A9F4',
+    },
+    astroAjuda:{
+        width: 184,
+        height:185,
+        alignSelf:"center",
+        marginTop:30,
+        marginBottom:45,
+ 
+    },
+    circuloAstroAjuda:{
+        backgroundColor:"#C4C4C4",
+        borderRadius: Math.round(Dimensions.get('window').width + Dimensions.get('window').height) / 2 ,
+        marginLeft:45,
+        marginRight:45,
+        marginTop:39,
+        borderColor:"#F40202",
+        borderWidth:10,
     },
 });
 
