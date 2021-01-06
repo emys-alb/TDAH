@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#000',
         width: "100%",
         height: "100%",
-        marginTop: 15,
+        marginTop: 20,
     },
 
     buttonsContainerArea:{
@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
         paddingTop: 30,
         paddingLeft: 25,
         paddingRight: 15,
-        marginTop: "10%",
+        marginTop: "15%",
         fontSize: 30,
     },
 
@@ -40,30 +40,30 @@ const styles = StyleSheet.create({
     },
 
     circuloAstroAjuda:{
-        backgroundColor:"#C4C4C408",
+        backgroundColor:"rgba(196, 196, 196, 0.27)",
         borderRadius: Math.round(Dimensions.get('window').width + Dimensions.get('window').height) / 2 ,
         marginLeft:45,
         marginRight:45,
-        marginTop:39,
-        borderColor:"#02A9F4",
+        marginTop:22,
+        borderColor:"#F40202",
         borderWidth:10,
     },
-
+    
     astroAjuda:{
-        width: 184,
+        width: 185,
         height:185,
         alignSelf:"center",
         marginTop:30,
-        marginBottom:45,
+        marginBottom:35,
     },
-
-    circuloAstroAjuda:{
+    
+    circuloAstroParabens:{
         backgroundColor:"#C4C4C4",
         borderRadius: Math.round(Dimensions.get('window').width + Dimensions.get('window').height) / 2 ,
         marginLeft:45,
         marginRight:45,
-        marginTop:39,
-        borderColor:"#F40202",
+        marginTop:22,
+        borderColor:"#02A9F4",
         borderWidth:10,
     },
 });

@@ -20,6 +20,7 @@ const stylesComponentes = StyleSheet.create({
         paddingTop: 30,
         paddingLeft: 25,
         paddingRight: 15,
+        paddingBottom: 15,
     },
 
     textTarefa: {
@@ -34,7 +35,6 @@ const stylesComponentes = StyleSheet.create({
         color: "#FFFFFF",
         paddingBottom: 30,
         paddingTop: 20,
-       
     },
 
     progressBarContainer: {
@@ -57,13 +57,22 @@ const stylesComponentes = StyleSheet.create({
         paddingTop: 15,
     },
 
-    arearDeTexto:{
+    areaDeTexto:{
         height:"40%", 
         borderColor: 'gray', 
         borderWidth: 1,
         backgroundColor: "#FFFFFF",
         marginBottom:"15%",
     },
+
+    titleParabens: {
+        textAlign:"center",
+        fontSize: 30,
+        fontWeight: "bold",
+        color: "#FFFFFF",
+        paddingTop: 10,
+        paddingBottom: 30,
+    }
 });
 
 export default stylesComponentes;
