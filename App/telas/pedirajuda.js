@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Button, Image } from "react-native";
+import { View, Button, Image, TouchableOpacity,Text } from "react-native";
 import styles from "../css/telas";
 import Avaliacao from '../componentes/Avaliacao';
 
@@ -13,7 +13,9 @@ const pedirajuda = ({ navigation }) => {
             <Avaliacao title="Algumas missões são muito dificeis para uma pessoa só.
                 Procure um responsável para lhe ajudar com essa tarefa." />
                  <View style={styles.buttonsAjudaArea}>
-                    <Button  title= "Voltar para missão"color="#00AA95" accessibilityLabel="Botão para retornar para missão" onPress={() => navigation.navigate('Tarefas do Dia')}/>
+                    <TouchableOpacity style={styles.botaoVerdeTelaAvaliacao} onPress={() => navigation.navigate('Tarefas do Dia')}>
+                                <Text style={styles.textButtonTarefaN}>Voltar para Missão</Text>
+                    </TouchableOpacity>
                  </View>
         </View>
 
