@@ -1,14 +1,14 @@
 import React from "react";
 import { Text, View } from "react-native";
 
-import styles from '../css/componentes'
+import stylesComponentes from '../css/componentes'
 
 const Tarefa = (props) => {
     return(
         <View>
-        <Text style={styles.titleTarefa}> {props.title} </Text>
-        <View style={styles.textContainerTarefa}>
-        <Text style={styles.textTarefa}>{props.text}</Text>
+        <Text style={stylesComponentes.titleTarefa}> {props.title} </Text>
+        <View style={stylesComponentes.textContainerTarefa}>
+        <Text style={stylesComponentes.textTarefa}>{props.text}</Text>
         </View>
        </View>
     )

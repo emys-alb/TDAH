@@ -1,6 +1,6 @@
 import { StyleSheet } from "react-native"
 
-const styles = StyleSheet.create({
+const stylesComponentes = StyleSheet.create({
     titleTarefa: {
         fontWeight: "700",
         fontSize: 32,
@@ -26,6 +26,7 @@ const styles = StyleSheet.create({
         color: "#FFF",
         fontSize: 20,
     },
+
     titleAvaliacao: {
         textAlign:"center",
         fontWeight: "700",
@@ -65,4 +66,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default styles;
+export default stylesComponentes;

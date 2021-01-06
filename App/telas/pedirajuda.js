@@ -1,7 +1,8 @@
 import React from "react";
-import { Text, View, Button, Image } from "react-native";
+import { View, Button, Image } from "react-native";
 import styles from "../css/telas";
 import Avaliacao from '../componentes/Avaliacao';
+
 const pedirajuda = ({ navigation }) => {
     return(
         <View style={styles.container}>
