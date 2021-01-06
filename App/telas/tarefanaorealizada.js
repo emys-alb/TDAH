@@ -1,6 +1,6 @@
 import React from 'react';
-import { View , Button, TouchableOpacity, Text} from 'react-native';
-import styles from '../css/telas';
+import { View, TouchableOpacity, Text} from 'react-native';
+import styles from '../assets/css/telas';
 import ProgressBar from '../componentes/ProgressBar';
 import Avaliacao from '../componentes/Avaliacao';
 const tarefanaorealizada = ({navigation}) => {
@@ -26,7 +26,7 @@ const tarefanaorealizada = ({navigation}) => {
                     </View>
                     <View style={styles.buttonsAvaliacaoArea}>
                          <TouchableOpacity style={styles.botaoVermelhoTelaAvaliacao} onPress={() => navigation.navigate('ajuda')}>
-                                <Text style={styles.textButtonTarefaN}>Precio de Ajuda</Text>
+                                <Text style={styles.textButtonTarefaN}>Preciso de Ajuda</Text>
                         </TouchableOpacity>
                     </View>
                 </View>

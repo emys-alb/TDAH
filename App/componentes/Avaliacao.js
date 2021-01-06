@@ -1,7 +1,7 @@
 import React from "react";
 import { Text, View } from "react-native";
 
-import stylesComponentes from '../css/componentes'
+import stylesComponentes from '../assets/css/componentes'
 
 const Avaliacao = (props) => {
     return(

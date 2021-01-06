@@ -1,13 +1,13 @@
 import React from "react";
 import { View, Button, Image, TouchableOpacity,Text } from "react-native";
-import styles from "../css/telas";
+import styles from "../assets/css/telas";
 import Avaliacao from '../componentes/Avaliacao';
 
 const pedirajuda = ({ navigation }) => {
     return(
         <View style={styles.container}>
         <View style={styles.circuloAstroAjuda}>
-            <Image style={styles.astroAjuda} source={require('../img/astronaut-pescando.png')} />
+            <Image style={styles.astroAjuda} source={require('../assets/img/astronaut-pescando.png')} />
         </View>
         <View>
             <Avaliacao title="Algumas missões são muito dificeis para uma pessoa só.

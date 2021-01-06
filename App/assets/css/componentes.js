@@ -16,7 +16,7 @@ const stylesComponentes = StyleSheet.create({
         backgroundColor: "#6E76E4",
         borderRadius: 26,
         width: "90%",
-        height: 300,
+        height: "70%",
         paddingTop: 30,
         paddingLeft: 25,
         paddingRight: 15,
@@ -43,7 +43,7 @@ const stylesComponentes = StyleSheet.create({
         justifyContent: "center",
         alignContent: "center",
         width: "100%",
-        height: 30,
+        height: "6%",
         padding: "2%",
     },
 
@@ -54,7 +54,7 @@ const stylesComponentes = StyleSheet.create({
         borderColor: '#000',
         borderWidth: 1,
         borderRadius: 5,
-        paddingTop: 15,
+        paddingTop: "3%",
     },
 
     areaDeTexto:{

@@ -1,11 +1,11 @@
-import { StyleSheet,Dimensions } from "react-native"
+import { StyleSheet, Dimensions } from "react-native"
 
 const styles = StyleSheet.create({
     buttons: {
         display: "flex",
         flexDirection: "row",
         justifyContent: "space-around",
-        paddingTop: 34,
+        paddingTop: "1%",
         paddingRight: "1%",
     },
 
@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
         paddingTop: 30,
         paddingLeft: 25,
         paddingRight: 15,
-        marginTop: "15%",
+        marginTop: "10%",
         fontSize: 30,
     },
 
@@ -36,6 +36,7 @@ const styles = StyleSheet.create({
     },
     buttonsAjudaArea:{
         marginLeft:"30%",
+        alignSelf: "center"
     },
 
     circuloAstroAjuda:{

@@ -1,12 +1,12 @@
 import React from 'react';
-import { View , Button, TouchableOpacity,Text} from 'react-native';
-import styles from '../css/telas';
+import { View, TouchableOpacity, Text} from 'react-native';
+import styles from '../assets/css/telas';
 import ProgressBar from '../componentes/ProgressBar';
 import Avaliacao from '../componentes/Avaliacao';
+
 const avaliacao = ({navigation}) => {
     return(
         <View style={styles.container}>
-
                 <View>
                     <ProgressBar />
                 </View>

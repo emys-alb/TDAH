@@ -1,6 +1,6 @@
 import React from 'react';
-import { View , Button, Text, TouchableOpacity} from 'react-native';
-import styles from '../css/telas';
+import { View, Text, TouchableOpacity} from 'react-native';
+import styles from '../assets/css/telas';
 import ProgressBar from '../componentes/ProgressBar';
 import Entradadetexto from "../componentes/Entradadetexto";
 import Avaliacao from '../componentes/Avaliacao';
