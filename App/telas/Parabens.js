@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, View, Button, Image } from "react-native";
+import { Text, View, Button, Image, TouchableOpacity } from "react-native";
 
 import stylesComponentes from "../css/componentes";
 import styles from "../css/telas";
@@ -13,8 +13,11 @@ const Parabens = ({ navigation }) => {
             </View>
             <View>
                 <Text style={stylesComponentes.titleParabens}>{"Parabéns por ter concluido a missão!\nA galáxia está salva graças a você.\nContinue assim."}</Text>
-                <Button title="Proxima Missão" color="#00AA95" accessibilityLabel="Botão para ir para a próxima missão"
-                onPress={() => navigation.navigate('Tarefas do Dia')}></Button>
+                <View style={styles.buttonsAjudaArea}>
+                <TouchableOpacity style={styles.botaoVerdeTelaAvaliacao} onPress={() => navigation.navigate('Tarefas do Dia')}>
+                    <Text style={styles.textButtonTarefaN}>Proxima Missão</Text>
+                 </TouchableOpacity>
+                 </View>
             </View>
         </View>
     )

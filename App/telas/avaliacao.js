@@ -1,5 +1,5 @@
 import React from 'react';
-import { View , Button} from 'react-native';
+import { View , Button, TouchableOpacity,Text} from 'react-native';
 import styles from '../css/telas';
 import ProgressBar from '../componentes/ProgressBar';
 import Avaliacao from '../componentes/Avaliacao';
@@ -15,14 +15,20 @@ const avaliacao = ({navigation}) => {
                     <View style={styles.buttonsContainerArea}>
                     <Avaliacao title = "Como você se sentiu realizando essa atividade?"/>
                         <View style={styles.buttonsAvaliacaoArea}>
-                            <Button title= "Bem" color="#00AA95" accessibilityLabel="Botão para dizer se está se sentindo 'Bem'"  onPress={() => navigation.navigate('Parabens')}/>
+                            <TouchableOpacity style={styles.botaoVerdeTelaAvaliacao} onPress={() => navigation.navigate('Parabens')}>
+                                <Text style={styles.textButtonTarefa}>Bem</Text>
+                            </TouchableOpacity>
                         </View>
-                    <View style={styles.buttonsAvaliacaoArea}>
-                            <Button title= "Normal" color="#545C60"accessibilityLabel="Botão para dizer se está se sentindo 'Normal'"  onPress={() => navigation.navigate('Parabens')}/>
+                        <View style={styles.buttonsAvaliacaoArea}>
+                            <TouchableOpacity style={styles.botaoCinzaTelaAvaliacao} onPress={() => navigation.navigate('Parabens')}>
+                                <Text style={styles.textButtonTarefa}>Normal</Text>
+                            </TouchableOpacity>
                         </View>
-                            <View style={styles.buttonsAvaliacaoArea}>
-                                    <Button title= "Chateado"  color="#FF415B" accessibilityLabel="Botão para dizer se está se sentindo 'Chateado'"  onPress={() => navigation.navigate('Parabens')}/>
-                            </View>
+                        <View style={styles.buttonsAvaliacaoArea}>
+                            <TouchableOpacity style={styles.botaoVermelhoTelaAvaliacao} onPress={() => navigation.navigate('Parabens')}>
+                                <Text style={styles.textButtonTarefa}>Chateado</Text>
+                            </TouchableOpacity>
+                        </View>
                     </View>
                   
             </View>

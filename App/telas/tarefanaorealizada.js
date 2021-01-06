@@ -1,5 +1,5 @@
 import React from 'react';
-import { View , Button} from 'react-native';
+import { View , Button, TouchableOpacity, Text} from 'react-native';
 import styles from '../css/telas';
 import ProgressBar from '../componentes/ProgressBar';
 import Avaliacao from '../componentes/Avaliacao';
@@ -15,13 +15,19 @@ const tarefanaorealizada = ({navigation}) => {
                     <Avaliacao title = "Parabéns pela tentativa. Se teve dificuldade considere pedir ajuda."/>
                     
                     <View style={styles.buttonsAvaliacaoArea}>
-                         <Button title= "Continuar Tentando"color="#00AA95" accessibilityLabel="Botão para retornar a tarefa" onPress={() => navigation.navigate('Tarefas do Dia')} />
+                        <TouchableOpacity style={styles.botaoVerdeTelaAvaliacao} onPress={() => navigation.navigate('Tarefas do Dia')}>
+                                <Text style={styles.textButtonTarefaN}>Continuar Tentando</Text>
+                         </TouchableOpacity>
                     </View>
                     <View style={styles.buttonsAvaliacaoArea}>
-                        <Button title= "Pular Missão" color="#545C60" accessibilityLabel="Botão para pular missão"  onPress={() => navigation.navigate('motivo')}/>
+                        <TouchableOpacity style={styles.botaoCinzaTelaAvaliacao} onPress={() => navigation.navigate('motivo')}>
+                                <Text style={styles.textButtonTarefa}>Pular Missão</Text>
+                        </TouchableOpacity>
                     </View>
                     <View style={styles.buttonsAvaliacaoArea}>
-                        <Button title= "Preciso de Ajuda" color="#FF415B" accessibilityLabel="Botão para pedir ajuda" onPress={() => navigation.navigate('ajuda')} />
+                         <TouchableOpacity style={styles.botaoVermelhoTelaAvaliacao} onPress={() => navigation.navigate('ajuda')}>
+                                <Text style={styles.textButtonTarefaN}>Precio de Ajuda</Text>
+                        </TouchableOpacity>
                     </View>
                 </View>
             </View>

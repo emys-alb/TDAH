@@ -6,7 +6,7 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         justifyContent: "space-around",
         paddingTop: 34,
-        paddingRight: 15,
+        paddingRight: "1%",
     },
 
     container: {
@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#000',
         width: "100%",
         height: "100%",
-        marginTop: 20,
+        marginTop: "8.6%",
     },
 
     buttonsContainerArea:{
@@ -32,11 +32,10 @@ const styles = StyleSheet.create({
 
     buttonsAvaliacaoArea:{
         marginBottom:"4%",
+        marginLeft:"25%",
     },
-
     buttonsAjudaArea:{
-        marginLeft:44,
-        marginRight:44,
+        marginLeft:"30%",
     },
 
     circuloAstroAjuda:{
@@ -65,6 +64,69 @@ const styles = StyleSheet.create({
         marginTop:22,
         borderColor:"#02A9F4",
         borderWidth:10,
+    },
+    botaoTelaMotivo:{
+        backgroundColor:"#00AA95",
+        width:138,
+        height:69,
+        marginLeft:"50%",
+        borderRadius:10,
+    },
+    botaoVermelhoTelaTarefa:{
+        backgroundColor:"#FF415B",
+        width:138,
+        height:69,
+        borderRadius:10,
+    },
+    botaoVerdeTelaTarefa:{
+        backgroundColor:"#00AA95",
+        width:138,
+        height:69,
+        borderRadius:10,
+    },
+    botaoVerdeTelaAvaliacao:{
+        backgroundColor:"#00AA95",
+        width:138,
+        height:69,
+        borderRadius:10,
+    },
+    botaoCinzaTelaAvaliacao:{
+        backgroundColor:"#545C60",
+        width:138,
+        height:69,
+        borderRadius:10,
+    },
+    botaoVermelhoTelaAvaliacao:{
+        backgroundColor:"#FF415B",
+        width:138,
+        height:69,
+        borderRadius:10,
+    },
+    textButton:{
+        fontWeight:"800",
+        color:"#FFFFFF",
+        fontSize:25,
+        marginLeft:"23%",
+        marginTop:"10%",
+ 
+    },
+    textButtonTarefa:{
+        fontWeight:"800",
+        color:"#FFFFFF",
+        fontSize:20,
+        marginLeft:"2%",
+        marginTop:"15%",
+        textAlign:"center",
+ 
+    },
+    textButtonTarefaN:{
+        fontWeight:"800",
+        color:"#FFFFFF",
+        fontSize:20,
+        marginLeft:"2%",
+        marginTop:"8%",
+        textAlign:"center",
+ 
     },
 });
 
