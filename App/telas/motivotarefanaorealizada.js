@@ -1,15 +1,15 @@
 import React from 'react';
 import { View, Text, TouchableOpacity} from 'react-native';
 import styles from '../assets/css/telas';
-import ProgressBar from '../componentes/ProgressBar';
 import Entradadetexto from "../componentes/Entradadetexto";
 import Avaliacao from '../componentes/Avaliacao';
+import BarraDeProgresso from '../componentes/ProgressBar';
 
 const motivotarefanaorealizada = ({navigation}) => {
     return(
         <View style={styles.container}>
             <View>
-                <ProgressBar />
+                <BarraDeProgresso />
             </View>
             <View style={{alignItems: "center"}}>
                 <View style={styles.buttonsContainerArea}>

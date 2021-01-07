@@ -4,9 +4,7 @@ import { Text, View, StyleSheet } from 'react-native';
 
 import stylesComponentes from '../assets/css/componentes'
 
-const ProgressBar = (props) => {
-    let progresso = props.progresso;
-
+const BarraDeProgresso = () => {
     return(
         <View style={stylesComponentes.progressBarContainer}>
             <View style={stylesComponentes.progressBar}>
@@ -17,4 +15,4 @@ const ProgressBar = (props) => {
     )
 }
 
-export default ProgressBar
+export default BarraDeProgresso

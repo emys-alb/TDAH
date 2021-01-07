@@ -1,14 +1,14 @@
 import React from 'react';
 import { View, TouchableOpacity, Text} from 'react-native';
 import styles from '../assets/css/telas';
-import ProgressBar from '../componentes/ProgressBar';
 import Avaliacao from '../componentes/Avaliacao';
+import BarraDeProgresso from '../componentes/ProgressBar';
 
 const avaliacao = ({navigation}) => {
     return(
         <View style={styles.container}>
                 <View>
-                    <ProgressBar />
+                    <BarraDeProgresso />
                 </View>
 
              <View style={{alignItems: "center"}}>
