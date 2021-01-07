@@ -1,16 +1,16 @@
-import React, { useState } from 'react';
-import Animated from 'react-native-reanimated';
-import { Text, View, StyleSheet } from 'react-native';
+import React from 'react';
+import { Text, View, StyleSheet, Animated } from 'react-native';
 
 import stylesComponentes from '../assets/css/componentes'
 
-const BarraDeProgresso = () => {
+const BarraDeProgresso = ({ value }) => {
+    let progresso = value * 100;
     return(
         <View style={stylesComponentes.progressBarContainer}>
             <View style={stylesComponentes.progressBar}>
-                <Animated.View style={[StyleSheet.absoluteFill], {backgroundColor: "#02A9F4", width: 300, height: "100%"}}/>
-            </View>
-            <Text style={{color: "#fff", fontWeight: "bold"}}> 20/100 </Text>
+                <Animated.View style={[StyleSheet.absoluteFill], {width: progresso, backgroundColor: "#02A9F4", height: "100%"}} />
+             </View>
+            <Text style={{color: "#fff", fontWeight: "bold"}}> {progresso}/100 </Text>
         </View>
     )
 }

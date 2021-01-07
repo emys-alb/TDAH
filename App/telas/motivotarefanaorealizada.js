@@ -8,9 +8,6 @@ import BarraDeProgresso from '../componentes/ProgressBar';
 const motivotarefanaorealizada = ({navigation}) => {
     return(
         <View style={styles.container}>
-            <View>
-                <BarraDeProgresso />
-            </View>
             <View style={{alignItems: "center"}}>
                 <View style={styles.buttonsContainerArea}>
                 <Avaliacao title = "Por que você não concluiu a tarefa?"/>

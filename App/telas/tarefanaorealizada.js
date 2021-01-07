@@ -6,10 +6,6 @@ import BarraDeProgresso from '../componentes/ProgressBar';
 const tarefanaorealizada = ({navigation}) => {
     return(
         <View style={styles.container}>
-            <View>
-                <BarraDeProgresso />
-            </View>
-
             <View style={{alignItems: "center"}}>
                 <View style={styles.buttonsContainerArea}>
                     <Avaliacao title = "Parabéns pela tentativa. Se teve dificuldade considere pedir ajuda."/>

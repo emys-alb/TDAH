@@ -7,10 +7,6 @@ import BarraDeProgresso from '../componentes/ProgressBar';
 const avaliacao = ({navigation}) => {
     return(
         <View style={styles.container}>
-                <View>
-                    <BarraDeProgresso />
-                </View>
-
              <View style={{alignItems: "center"}}>
                     <View style={styles.buttonsContainerArea}>
                     <Avaliacao title = "Como você se sentiu realizando essa atividade?"/>

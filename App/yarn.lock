@@ -3284,7 +3284,7 @@ expo-updates@~0.4.0:
     fbemitter "^2.1.1"
     uuid "^3.4.0"
 
-expo@~40.0.0:
+expo@^40.0.0:
   version "40.0.0"
   resolved "https://registry.yarnpkg.com/expo/-/expo-40.0.0.tgz#6caf03587532cd18b482991332a8b75eeca2fcb7"
   integrity sha512-LT6Ae/Ms0qtRyJlJsj/FMB5AQpj6nED39SY9KqY4zK/uFG+R7DJ/4VUzkPued1mWtRUrtaqR+t88pA3p0vAWcg==
