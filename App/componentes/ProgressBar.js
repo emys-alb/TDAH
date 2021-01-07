@@ -10,7 +10,7 @@ const BarraDeProgresso = () => {
             <View style={stylesComponentes.progressBar}>
                 <Animated.View style={[StyleSheet.absoluteFill], {backgroundColor: "#02A9F4", width: 300, height: "100%"}}/>
             </View>
-            <Text style={{color: "#fff", fontWeight: "bold"}}> {progresso}/100 </Text>
+            <Text style={{color: "#fff", fontWeight: "bold"}}> 20/100 </Text>
         </View>
     )
 }
