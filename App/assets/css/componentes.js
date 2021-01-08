@@ -1,13 +1,13 @@
 import { StyleSheet } from "react-native"
-
+import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 const stylesComponentes = StyleSheet.create({
     titleTarefa: {
         fontWeight: "700",
-        fontSize: 32,
+        fontSize: hp('5%'),
         color: "#FF7C48",
         lineHeight: 28,
-        paddingBottom: 30,
-        paddingTop: 20,
+        paddingBottom: hp('2%'),
+        paddingTop: hp('3%'),
         justifyContent: "center"
     },
 
@@ -15,23 +15,23 @@ const stylesComponentes = StyleSheet.create({
         padding: 8,
         backgroundColor: "#6E76E4",
         borderRadius: 26,
-        width: "90%",
-        height: "70%",
-        paddingTop: 30,
-        paddingLeft: 25,
-        paddingRight: 15,
-        paddingBottom: 15,
+        width: wp('90%'),
+        height: hp('50%'),
+        paddingTop: hp('10%'),
+        paddingLeft: wp('10%'),
+        paddingRight: wp('10%'),
+        paddingBottom: hp('10%'),
     },
 
     textTarefa: {
         color: "#FFF",
-        fontSize: 20,
+        fontSize: hp('3%'),
     },
 
     titleAvaliacao: {
         textAlign:"center",
         fontWeight: "700",
-        fontSize: 30,
+        fontSize: hp('4.2%'),
         color: "#FFFFFF",
         paddingBottom: 30,
         paddingTop: 20,
@@ -42,36 +42,36 @@ const stylesComponentes = StyleSheet.create({
         flexDirection: "row",
         justifyContent: "center",
         alignContent: "center",
-        width: "100%",
-        height: "6%",
-        padding: "2%",
+        width: wp('100%'),
+        height: hp('6%'),
+        padding: hp('2%'),
     },
 
     progressBar: {
-        height: 20,
-        width: '80%',
+        height: hp('3%'),
+        width: wp('80%'),
         backgroundColor: '#C4C4C4',
         borderColor: '#000',
         borderWidth: 1,
         borderRadius: 5,
-        paddingTop: "3%",
+        paddingTop: hp('1%'),
     },
 
     areaDeTexto:{
-        height:"40%", 
+        height:hp('40%'), 
         borderColor: 'gray', 
         borderWidth: 1,
         backgroundColor: "#FFFFFF",
-        marginBottom:"15%",
+        marginBottom:hp('7%'),
     },
 
     titleParabens: {
         textAlign:"center",
-        fontSize: 30,
+        fontSize: hp('4%'),
         fontWeight: "bold",
         color: "#FFFFFF",
-        paddingTop: 10,
-        paddingBottom: 30,
+        paddingTop: hp('3%'),
+        paddingBottom: hp('6%'),
     }
 });
 

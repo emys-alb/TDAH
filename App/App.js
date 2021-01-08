@@ -3,7 +3,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator} from '@react-navigation/stack';
 import tarefasScreen from './telas/tarefas';
 import avaliacaoScreen from './telas/avaliacao';
-import parabensScreen from './telas/parabens';
+import parabensScreen from './telas/Parabens';
 import tarefanrealizadaScreen from "./telas/tarefanaorealizada";
 import motivonaorealizarScreen from "./telas/motivotarefanaorealizada";
 import pedirajudaScreen from "./telas/pedirajuda";
