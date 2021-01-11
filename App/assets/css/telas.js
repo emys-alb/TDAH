@@ -102,12 +102,23 @@ const styles = StyleSheet.create({
         height:hp('10%'),
         borderRadius:10,
     },
+    icone: {
+        width: wp('18%'), 
+        height: hp('10%'),
+        alignSelf: "center",
+    },
+    icones: {
+        alignItems: "center",
+        justifyContent: "space-around",
+        flexDirection: "row",
+        marginTop: hp('5%'),
+        marginBottom: hp('5%'),
+    },
     textButton:{
         fontWeight:"800",
         color:"#FFFFFF",
         fontSize:hp('4.5%'),
         alignSelf:"center"
- 
     },
     textButtonTarefa:{
         fontWeight:"800",
@@ -115,7 +126,6 @@ const styles = StyleSheet.create({
         fontSize:hp('2.8%'),
         marginTop:hp('3%'),
         textAlign:"center",
- 
     },
     textButtonTarefaN:{
         fontWeight:"800",
@@ -123,7 +133,13 @@ const styles = StyleSheet.create({
         fontSize:hp('2.8%'),
         marginTop:hp('1.5%'),
         textAlign:"center",
- 
+    },
+    botaoVerdeFinalizadas:{
+        backgroundColor:"#00AA95",
+        width:wp('40%'),
+        height:hp('10%'),
+        borderRadius:10,
+        alignSelf: "center",
     },
 });
 

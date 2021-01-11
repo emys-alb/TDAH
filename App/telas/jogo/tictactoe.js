@@ -134,8 +134,6 @@ export default class JogoDaVelha extends Component {
 
             }
 
-            // Se há três células marcadas do mesmo jogador, então, define-o
-            // vencedor.
             if (qt_marcacoes === 3) {
                 this.state.ganhador = vez_de;
 
@@ -143,7 +141,6 @@ export default class JogoDaVelha extends Component {
             }
         }
 
-        // Verificar Diagonal Superior Esquerda a Diagonal Inferior Direita.
         let qt_marcacoes = 0;
         for (let linha_coluna = 0; linha_coluna < 3; linha_coluna++) {
             let celula_atual = this.state.tabuleiro[linha_coluna][linha_coluna];
@@ -514,7 +511,7 @@ export default class JogoDaVelha extends Component {
                         {this.state.ganhador === 'x' && <X />}
                         {this.state.ganhador === 'o' && <O />}
                         {this.state.ganhador !== '' && <Text>GANHOU</Text>}
-                        {this.state.empate === 'sim' && <Text>** EMPATE **</Text>}
+                        {this.state.empate === 'sim' && <Text>EMPATE</Text>}
                     </View>
                 </View>
 
@@ -523,6 +520,9 @@ export default class JogoDaVelha extends Component {
                         this.resetar_tabuleiro();
                     }} />
                 </View>
+                {/*<View style={styles.reset_button} >
+                    <Button title="Voltar" onPress={() => props.navigation.navigate('Missoes Finalizadas')} />
+                </View>*/}
 
             </View>
         );
