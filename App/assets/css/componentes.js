@@ -37,6 +37,13 @@ const stylesComponentes = StyleSheet.create({
         paddingBottom: 30,
         paddingTop: 20,
     },
+    
+    titleInicial: {
+        textAlign:"center",
+        fontWeight: "bold",
+        fontSize: hp('8%'),
+        color: "#FFFFFF",
+    },
 
     progressBarContainer: {
         backgroundColor: "#FF7C48",
@@ -74,17 +81,18 @@ const stylesComponentes = StyleSheet.create({
     iconePergunta: {
         alignSelf: "flex-start",
         backgroundColor: "#000",
-        width: wp('7%'),
-        height: hp('7%'),
+        width: wp('10%'),
+        height: hp('8%'),
     },
     botaoLaranja: {
         alignSelf: "center",
         alignContent: "center",
         justifyContent: "center",
         backgroundColor: "#FF7C48",
+        marginTop: hp('2%'),
         borderRadius: 10,
-        width: wp('15%'),
-        height: hp('12%'),
+        width: wp('40%'),
+        height: hp('13%'),
     }
 });
 
