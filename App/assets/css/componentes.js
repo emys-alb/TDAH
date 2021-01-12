@@ -77,6 +77,15 @@ const stylesComponentes = StyleSheet.create({
         width: wp('7%'),
         height: hp('7%'),
     },
+    botaoLaranja: {
+        alignSelf: "center",
+        alignContent: "center",
+        justifyContent: "center",
+        backgroundColor: "#FF7C48",
+        borderRadius: 10,
+        width: wp('15%'),
+        height: hp('12%'),
+    }
 });
 
 export default stylesComponentes;
