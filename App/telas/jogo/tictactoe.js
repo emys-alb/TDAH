@@ -19,8 +19,7 @@ import { O } from './o';
 
 export default class JogoDaVelha extends Component {
 
-    constructor(props) {
-        super(props);
+    constructor({ navigation }) {
         this.state = {
 
             empate: 'nao',
@@ -384,7 +383,6 @@ export default class JogoDaVelha extends Component {
 
                 console.log('id_celula: ' + id_celula);
 
-                // Obter linha e coluna.
                 let indice_linha = Math.trunc(id_celula / 3);
                 let indice_coluna = id_celula % 3;
 
@@ -520,9 +518,9 @@ export default class JogoDaVelha extends Component {
                         this.resetar_tabuleiro();
                     }} />
                 </View>
-                {/*<View style={styles.reset_button} >
-                    <Button title="Voltar" onPress={() => props.navigation.navigate('Missoes Finalizadas')} />
-                </View>*/}
+                <View style={styles.reset_button} >
+                    <Button title="Voltar" onPress={() => navigation.navigate('Missoes Finalizadas')} />
+                </View>
 
             </View>
         );

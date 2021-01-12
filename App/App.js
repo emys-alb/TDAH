@@ -1,6 +1,8 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator} from '@react-navigation/stack';
+import inicio from './telas/telasIniciais/inicio';
+import sobre from './telas/telasIniciais/sobre';
 import tarefasScreen from './telas/tarefas';
 import avaliacaoScreen from './telas/avaliacao';
 import parabensScreen from './telas/parabens';
@@ -17,6 +19,8 @@ export default function App(){
         <Stack.Navigator screenOptions={{
       headerShown: false
     }}>
+          <Stack.Screen name="Iniciar" component={inicio}/>
+          <Stack.Screen name="Sobre" component={sobre}/>
           <Stack.Screen name="Tarefas do Dia" component={tarefasScreen}/>
           <Stack.Screen name="Avalie sua Tarefa" component={avaliacaoScreen}/>
           <Stack.Screen name="Parabens" component={parabensScreen}/>

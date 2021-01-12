@@ -70,7 +70,13 @@ const stylesComponentes = StyleSheet.create({
         color: "#FFFFFF",
         paddingTop: hp('3%'),
         paddingBottom: hp('6%'),
-    }
+    },
+    iconePergunta: {
+        alignSelf: "flex-start",
+        backgroundColor: "#000",
+        width: wp('7%'),
+        height: hp('7%'),
+    },
 });
 
 export default stylesComponentes;
