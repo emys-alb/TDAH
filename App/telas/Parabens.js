@@ -14,7 +14,7 @@ const Parabens = ({ navigation }) => {
             <View>
                 <Text style={stylesComponentes.titleParabens}>{"Parabéns por ter concluido a missão!\nA galáxia está salva graças a você.\nContinue assim."}</Text>
                 <View style={styles.buttonsAjudaArea}>
-                <TouchableOpacity style={styles.botaoVerdeTelaTarefa} onPress={() => navigation.navigate('Missoes Finalizadas')}>
+                <TouchableOpacity style={styles.botaoVerdeTelaTarefa} onPress={() => navigation.navigate('Tarefas do Dia')}>
                     <Text style={styles.textButtonTarefaN}>Proxima Missão</Text>
                  </TouchableOpacity>
                  </View>
