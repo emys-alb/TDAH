@@ -3,6 +3,7 @@ import { View, TouchableOpacity, Text} from 'react-native';
 import styles from '../assets/css/telas';
 import Avaliacao from '../componentes/Avaliacao';
 import BarraDeProgresso from '../componentes/ProgressBar';
+import contador from '../services/contador';
 const tarefanaorealizada = ({navigation}) => {
     return(
         <View style={styles.container}>
@@ -16,7 +17,7 @@ const tarefanaorealizada = ({navigation}) => {
                          </TouchableOpacity>
                     </View>
                     <View style={styles.buttonsAvaliacaoArea}>
-                        <TouchableOpacity style={styles.botaoCinzaTelaAvaliacao} onPress={() => navigation.navigate('motivo')}>
+                        <TouchableOpacity style={styles.botaoCinzaTelaAvaliacao} onPress={() =>navigation.navigate('motivo')}>
                                 <Text style={styles.textButtonTarefa}>Pular Missão</Text>
                         </TouchableOpacity>
                     </View>

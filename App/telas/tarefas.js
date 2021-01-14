@@ -5,14 +5,18 @@ import styles from '../assets/css/telas';
 import Tarefa from '../componentes/Tarefa';
 import BarraDeProgresso from '../componentes/ProgressBar';
 //import tarefasData from '../services/sqlite/tarefasData';
-var contID = 0;
+import contador from '../services/contador';
+
 const Tarefas = ({ navigation }) => {
-  
+
   const [value, setValue] = useState(0);
 
   const updatePercent= (newValue) => {
     setValue((value + newValue));
-    contID = contID + 1;
+  };
+
+  const atualizaMissao= () => {
+    contador.incrementaContador();
   };
   //deixa esses comentarios pra eu não me esquecer
   //tarefasData.create("tarefa teste","teste apenas","S");
@@ -37,21 +41,21 @@ const Tarefas = ({ navigation }) => {
     {id: 9, titulo:"tarefa 09 teste", descricao: "chama no zap zop 998867" },
     {id: 10, titulo:"tarefa 10 teste", descricao: "bolinho de arroz hit atemporal" },
 ]);
-
+  var cont = contador.getContagem();
   return (
 
     <View style={styles.container}>
       <BarraDeProgresso value={value} />
       <View>
         <View style={{alignItems: "center"}}>
-          <Tarefa title={tarefasLista[contID].titulo} text={tarefasLista[contID].descricao}/>
+          <Tarefa title={tarefasLista[cont].titulo} text={tarefasLista[cont].descricao}/>
         </View>
 
         <View style={styles.buttons}>
-                     <TouchableOpacity style={styles.botaoVermelhoTelaTarefa} onPress={() => navigation.navigate('Tarefa nao realizada')}>
+                     <TouchableOpacity style={styles.botaoVermelhoTelaTarefa} onPress={() =>navigation.navigate('Tarefa nao realizada')}>
                         <Text style={styles.textButtonTarefa}>Não Realizada</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity style={styles.botaoVerdeTelaTarefa} onPress={() => {updatePercent(0.3); navigation.navigate('Avalie sua Tarefa') }}>
+                    <TouchableOpacity style={styles.botaoVerdeTelaTarefa} onPress={() => {updatePercent(0.3); navigation.navigate('Avalie sua Tarefa');atualizaMissao() }}>
                         <Text style={styles.textButtonTarefa}>Realizada</Text>
                     </TouchableOpacity>
         </View>
