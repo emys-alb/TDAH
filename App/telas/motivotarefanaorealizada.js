@@ -4,7 +4,7 @@ import styles from '../assets/css/telas';
 import Entradadetexto from "../componentes/Entradadetexto";
 import Avaliacao from '../componentes/Avaliacao';
 import BarraDeProgresso from '../componentes/ProgressBar';
-
+import contador from '../services/contador';
 const motivotarefanaorealizada = ({navigation}) => {
     return(
         <View style={styles.container}>
@@ -12,7 +12,7 @@ const motivotarefanaorealizada = ({navigation}) => {
                 <View style={styles.buttonsContainerArea}>
                 <Avaliacao title = "Por que você não concluiu a tarefa?"/>
                     <Entradadetexto/>
-                        <TouchableOpacity style={styles.botaoTelaMotivo} onPress={() => navigation.navigate('Tarefas do Dia')}>
+                        <TouchableOpacity style={styles.botaoTelaMotivo} onPress={() => {navigation.navigate('Tarefas do Dia'),contador.incrementaContador()}}>
                         <Text style={styles.textButton}>Enviar</Text>
                     </TouchableOpacity>
                 </View>
