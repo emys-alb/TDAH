@@ -8,7 +8,8 @@ const Tarefa = (props) => {
         <View>
         <Text style={stylesComponentes.titleTarefa}> {props.title} </Text>
         <View style={stylesComponentes.textContainerTarefa}>
-        <Text style={stylesComponentes.textTarefa}>{props.text}</Text>
+            <Text style={stylesComponentes.textTarefa}>Horario: {props.horario}{'\n'}</Text>
+            <Text style={stylesComponentes.textTarefa}>{props.text}</Text>
         </View>
        </View>
     )

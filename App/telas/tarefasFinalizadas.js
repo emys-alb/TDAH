@@ -19,7 +19,7 @@ const tarefasFinalizadas = ({ navigation }) => {
                 <Text style={styles.textButton}>10/10</Text>
             </View>
         </View>
-        <TouchableOpacity style={styles.botaoVerdeFinalizadas} onPress={() => navigation.navigate('Jogo da Velha')}>
+        <TouchableOpacity style={styles.botaoVerdeFinalizadas} onPress={() => navigation.navigate('Iniciar')}>
             <Text style={styles.textButtonTarefa}>Curtir Games</Text>
         </TouchableOpacity>
      </View>
