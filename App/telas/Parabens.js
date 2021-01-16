@@ -16,7 +16,7 @@ const Parabens = ({ navigation }) => {
                 <Text style={stylesComponentes.titleParabens}>{"Parabéns por ter concluido a missão!\nA galáxia está salva graças a você.\nContinue assim."}</Text>
                 <View style={styles.buttonsAjudaArea}>
                 <TouchableOpacity style={styles.botaoVerdeTelaTarefa} onPress={() => {
-                    if(contador.getContagem() > 9){
+                    if(contador.getContagem() > 8){
                         contador.zeraContagem();
                         navigation.navigate('Missoes Finalizadas')
                     } else {

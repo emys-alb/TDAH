@@ -10,7 +10,7 @@ import contador from '../services/contador';
 const Tarefas = ({ navigation }) => {
 
   const [value, setValue] = useState(0);
-  const updatePercent= (newValue) => {
+  const updatePercent = (newValue) => {
     setValue((value + newValue));
   };
 
@@ -28,7 +28,7 @@ const Tarefas = ({ navigation }) => {
    por motivos de esta dando um erro de field sizes are different exponent ai so react native sabe o que
    e isso pq ja procurei muito
   */
-  const [tarefasLista, setTarefas] =useState([
+  const [tarefasLista, setTarefas] = useState([
     {id: 1, titulo:"Escovar os dentes", descricao: "O mundo precisa ser salvo do exercito de cáries. Rápido, escove os dentes e não deixe que eles ganhem.", horario:'8:10' }, 
     {id: 2, titulo:"Tomar café da manhã", descricao: "Saco vazio não para em pé. \nEsta na hora de tomar café.", horario:'8:30' },
     {id: 3, titulo:"Assistir TV", descricao: "Manhã boa é manhã tranquila. \nHora de assistir TV.", horario:'10:00' },
@@ -39,7 +39,6 @@ const Tarefas = ({ navigation }) => {
     {id: 8, titulo:"Lanche", descricao: "old que sorvete superestimado", horario:'16:00' },
     {id: 9, titulo:"Brincar na rua", descricao: "A rua te espera, vai brincar!", horario:'17:00' },
     {id: 10, titulo:"Assistir filmes", descricao: "Hora de aproveitar o fim do dia com aquele filminho", horario:'19:00' },
-    {id: 11, titulo:"Assistir filmes", descricao: "Hora de aproveitar o fim do dia com aquele filminho", horario:'19:00' },
 
 ]);
   var cont = contador.getContagem();
@@ -58,8 +57,14 @@ const Tarefas = ({ navigation }) => {
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.botaoVerdeTelaTarefa} onPress={() => {
                       updatePercent(0.1); 
+
+                      if(cont === 9) {
+                        setValue(0)
+                      }
+
                       navigation.navigate('Avalie sua Tarefa');
                       atualizaMissao();
+
                     }}>
                         <Text style={styles.textButtonTarefa}>Realizada</Text>
                     </TouchableOpacity>
