@@ -1,12 +1,19 @@
 {
   "name": "App",
-  "displayName": "App",
+  "displayName": "TDAH",
+  
   "expo": {
-    "name": "App",
-    "slug": "App",
+    "name": "TDAH",
+    "icon": "./assets/icon/astronaut.png",
     "version": "1.0.0",
-    "assetBundlePatterns": [
-      "**/*"
-    ]
-  }
+    "slug": "tripulante-da-aventura",
+    "ios": {
+      "bundleIdentifier": "com.tdah.tripulanteDaAventura",
+      "buildNumber": "1.0.0"
+    },
+    "android": {
+      "package": "com.tdah.tripulanteDaAventura",
+      "versionCode": 1
+    }
+   }
 }
