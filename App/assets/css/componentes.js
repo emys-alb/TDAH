@@ -18,15 +18,16 @@ const stylesComponentes = StyleSheet.create({
         borderRadius: 26,
         width: wp('90%'),
         height: hp('50%'),
-        paddingTop: hp('10%'),
-        paddingLeft: wp('10%'),
-        paddingRight: wp('10%'),
-        paddingBottom: hp('10%'),
+        paddingTop: hp('3%'),
+        paddingLeft: wp('5%'),
+        paddingRight: wp('5%'),
+        paddingBottom: hp('3%'),
     },
 
     textTarefa: {
         color: "#FFF",
         fontSize: hp('3%'),
+        marginTop:hp('2%'),
     },
 
     titleAvaliacao: {
@@ -93,6 +94,25 @@ const stylesComponentes = StyleSheet.create({
         borderRadius: 10,
         width: wp('40%'),
         height: hp('13%'),
+    },
+    taskTime:{
+        color: "#FFFFFF",
+        fontSize:hp("3%"),
+        marginLeft:wp("10%"),
+        marginTop: hp("-3.5%"),
+        marginBottom:hp("-1%"),
+    },
+    timeContainer:{
+        backgroundColor:"#D3D3D3",
+        marginLeft:wp("50%"),
+        borderRadius:10,
+        opacity: 0.8,
+    },
+    clock:{
+        width: wp('7%'),
+        height:hp('3.5%'),
+        marginTop:hp("3%"),
+        marginLeft:wp('1%'),
     }
 });
 
