@@ -1,18 +1,30 @@
 import React from 'react';
-import { View, Text, TouchableOpacity} from 'react-native';
+
+// Layout
+import { View, Text, TouchableOpacity } from 'react-native';
 import styles from '../assets/css/telas';
 import Entradadetexto from "../componentes/Entradadetexto";
 import Avaliacao from '../componentes/Avaliacao';
-import BarraDeProgresso from '../componentes/ProgressBar';
-import contador from '../services/contador';
-const motivotarefanaorealizada = ({navigation}) => {
-    return(
+
+//Redux
+import * as actions from '../redux/actions/counter';
+import { useDispatch } from 'react-redux';
+
+const motivotarefanaorealizada = ({ navigation }) => {
+    const dispatch = useDispatch();
+
+    return (
         <View style={styles.container}>
-            <View style={{alignItems: "center"}}>
+            <View style={{ alignItems: "center" }}>
                 <View style={styles.buttonsContainerArea}>
-                <Avaliacao title = "Por que você não concluiu a tarefa?"/>
-                    <Entradadetexto/>
-                        <TouchableOpacity style={styles.botaoTelaMotivo} onPress={() => {navigation.navigate('Tarefas do Dia'),contador.incrementaContador()}}>
+                    <Avaliacao title="Por que você não concluiu a tarefa?" />
+                    <Entradadetexto />
+                    <TouchableOpacity
+                        style={styles.botaoTelaMotivo}
+                        onPress={() => {
+                            navigation.navigate('Tarefas do Dia');
+                            dispatch(actions.increment());
+                        }}>
                         <Text style={styles.textButton}>Enviar</Text>
                     </TouchableOpacity>
                 </View>
@@ -20,4 +32,5 @@ const motivotarefanaorealizada = ({navigation}) => {
         </View>
     )
 }
+
 export default motivotarefanaorealizada;
