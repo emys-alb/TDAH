@@ -11,7 +11,7 @@ import motivonaorealizarScreen from "./telas/motivotarefanaorealizada";
 import pedirajudaScreen from "./telas/pedirajuda";
 import finalizacaoScreen from "./telas/tarefasFinalizadas";
 import jogoScreen from './telas/jogo/tictactoe';
-
+import menuScreen from './telas/telasIniciais/menu';
 //Redux
 import { Provider } from 'react-redux';
 import store from './redux/store';
@@ -38,6 +38,7 @@ function App(props) {
           <Stack.Screen name="ajuda" component={pedirajudaScreen} />
           <Stack.Screen name="Missoes Finalizadas" component={finalizacaoScreen} />
           <Stack.Screen name="Jogo da Velha" component={jogoScreen} />
+          <Stack.Screen name="menu" component={menuScreen} />
         </Stack.Navigator>
       </NavigationContainer>
     </Provider>

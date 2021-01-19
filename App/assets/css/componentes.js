@@ -42,7 +42,7 @@ const stylesComponentes = StyleSheet.create({
     titleInicial: {
         textAlign:"center",
         fontWeight: "bold",
-        fontSize: hp('8%'),
+        fontSize: hp('7%'),
         color: "#FFFFFF",
     },
 
@@ -81,7 +81,7 @@ const stylesComponentes = StyleSheet.create({
     },
     iconePergunta: {
         alignSelf: "flex-start",
-        backgroundColor: "#000",
+        backgroundColor: "#000000",
         width: wp('10%'),
         height: hp('8%'),
     },
@@ -113,6 +113,10 @@ const stylesComponentes = StyleSheet.create({
         height:hp('3.5%'),
         marginTop:hp("3%"),
         marginLeft:wp('1%'),
+    },
+    menuOption:{
+        alignSelf: "flex-start",
+        width: wp('80%'),
     }
 });
 
