@@ -17,7 +17,7 @@ const stylesComponentes = StyleSheet.create({
         backgroundColor: "#6E76E4",
         borderRadius: 26,
         width: wp('90%'),
-        height: hp('50%'),
+        height: hp('60%'),
         paddingTop: hp('3%'),
         paddingLeft: wp('5%'),
         paddingRight: wp('5%'),
@@ -117,6 +117,12 @@ const stylesComponentes = StyleSheet.create({
     menuOption:{
         alignSelf: "flex-start",
         width: wp('80%'),
+    },
+    taskImage:{
+        width:wp("35%"),
+        height:hp("18%"),
+        alignSelf:"center",
+        marginTop:hp("1%"),
     }
 });
 
