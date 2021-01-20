@@ -7,8 +7,8 @@ import styles from '../../assets/css/telas';
 const telaInicio = ({ navigation }) => {
     return(
         <View style={styles.container}> 
-            <TouchableOpacity style={stylesComponentes.iconePergunta} onPress={() => navigation.navigate('Sobre')}>
-                <Image style={styles.duvida} source={require('../../assets/img/question.png')}/>
+            <TouchableOpacity style={stylesComponentes.iconePergunta} onPress={() => navigation.navigate('menu')}>
+                <Image style={styles.duvida} source={require('../../assets/img/menu-icon.png')}/>
             </TouchableOpacity>
             <View style={styles.icones}>
                 <Text style={stylesComponentes.titleInicial}>TDAH</Text>
@@ -21,6 +21,7 @@ const telaInicio = ({ navigation }) => {
             <TouchableOpacity style={stylesComponentes.botaoLaranja}  onPress={() => navigation.navigate('Tarefas do Dia')}>
                 <Text style={styles.textButtonTarefaN}>Começar Aventura!</Text>
             </TouchableOpacity>
+            <Image style={styles.ship} source={require('../../assets/img/rocket-ship.png')} />
         </View>
     )
 }
