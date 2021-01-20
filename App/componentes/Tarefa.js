@@ -13,6 +13,7 @@ const Tarefa = (props) => {
             <Text style={stylesComponentes.taskTime}>{props.horario}{'\n'}</Text>
             </View>
             <Text style={stylesComponentes.textTarefa}>{props.text}</Text>
+            <Image style={stylesComponentes.taskImage} source={props.image}/>
         </View>
        </View>
     )
