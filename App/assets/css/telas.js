@@ -80,6 +80,7 @@ const styles = StyleSheet.create({
         height:hp('8%'),
         alignSelf:"flex-end",
         borderRadius:10,
+        justifyContent: "center",
     },
 
     botaoVermelhoTelaTarefa:{
@@ -87,6 +88,7 @@ const styles = StyleSheet.create({
         width:wp('40%'),
         height:hp('10%'),
         borderRadius:10,
+        justifyContent: "center",
     },
 
     botaoVerdeTelaTarefa:{
@@ -94,6 +96,7 @@ const styles = StyleSheet.create({
         width:wp('40%'),
         height:hp('10%'),
         borderRadius:10,
+        justifyContent: "center",
     },
 
     botaoVerdeTelaAvaliacao:{
@@ -101,6 +104,7 @@ const styles = StyleSheet.create({
         width:wp('40%'),
         height:hp('10%'),
         borderRadius:10,
+        justifyContent: "center",
     },
 
     botaoCinzaTelaAvaliacao:{
@@ -108,6 +112,7 @@ const styles = StyleSheet.create({
         width:wp('40%'),
         height:hp('10%'),
         borderRadius:10,
+        justifyContent: "center",
     },
 
     botaoVermelhoTelaAvaliacao:{
@@ -115,6 +120,7 @@ const styles = StyleSheet.create({
         width:wp('40%'),
         height:hp('10%'),
         borderRadius:10,
+        justifyContent: "center",
     },
     botaoVerdeFinalizadas:{
         backgroundColor:"#00AA95",
@@ -122,6 +128,7 @@ const styles = StyleSheet.create({
         height:hp('10%'),
         borderRadius:10,
         alignSelf: "center",
+        justifyContent: "center",
     },
 
     icone: {
@@ -166,7 +173,6 @@ const styles = StyleSheet.create({
         fontWeight:"800",
         color:"#FFFFFF",
         fontSize:hp('2.8%'),
-        marginTop:hp('3%'),
         textAlign:"center",
     },
 
@@ -174,7 +180,6 @@ const styles = StyleSheet.create({
         fontWeight:"800",
         color:"#FFFFFF",
         fontSize:hp('2.8%'),
-        marginTop:hp('1.5%'),
         textAlign:"center",
     },
 
@@ -182,7 +187,6 @@ const styles = StyleSheet.create({
         fontWeight:"800",
         color:"#FFFFFF",
         fontSize: hp('5%'),
-        marginTop:hp('5%'),
         marginRight: wp('5%'),
         marginLeft: wp('5%'),
         textAlign:"center",

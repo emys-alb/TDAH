@@ -4,9 +4,9 @@ import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-nat
 const stylesComponentes = StyleSheet.create({
     titleTarefa: {
         fontWeight: "700",
-        fontSize: hp('5%'),
+        fontSize: hp('4.5%'),
         color: "#FF7C48",
-        lineHeight: 28,
+        lineHeight: hp('5%'),
         paddingBottom: hp('2%'),
         paddingTop: hp('3%'),
         justifyContent: "center"
@@ -33,10 +33,12 @@ const stylesComponentes = StyleSheet.create({
     titleAvaliacao: {
         textAlign:"center",
         fontWeight: "700",
-        fontSize: hp('4.2%'),
+        fontSize: hp('4%'),
         color: "#FFFFFF",
         paddingBottom: 30,
         paddingTop: 20,
+        marginLeft: wp('2.5%'),
+        marginRight: wp('2.5%'),
     },
     
     titleInicial: {
