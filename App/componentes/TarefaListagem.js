@@ -3,13 +3,13 @@ import { Text, View, Image } from "react-native";
 
 import stylesComponentes from '../assets/css/componentes'
 
-const Tarefa = (props) => {
+const TarefaListagem = (props) => {
     return(
         <View>
-        <Text style={stylesComponentes.titleTarefa}> {props.title} </Text>
-        <View style={stylesComponentes.textContainerTarefa}>
-            <Text style={stylesComponentes.textTarefa}>{props.text}</Text>
-            <Image style={stylesComponentes.taskImage} source={props.image}/>
+        <View style={stylesComponentes.textContainerTaskListing}>
+        <Text style={stylesComponentes.titleTaskListing}> {props.title} </Text>
+        <Text style={stylesComponentes.taskTimeListing}>{props.horario}{'\n'}</Text>
+            <Image style={stylesComponentes.taskImageListing} source={props.image}/>
         </View>
        </View>
     )
@@ -18,4 +18,4 @@ const Tarefa = (props) => {
 //<Image style={stylesComponentes.clock} source={require('../assets/img/clock-time.png')}/>
 //<Text style={stylesComponentes.taskTime}>{props.horario}{'\n'}</Text>
 //</View>
-export default Tarefa 
+export default TarefaListagem;

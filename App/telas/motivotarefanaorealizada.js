@@ -8,8 +8,10 @@ import Avaliacao from '../componentes/Avaliacao';
 
 //Redux
 import * as actions from '../redux/actions/counter';
-import { useDispatch } from 'react-redux';
+import * as skipActions from '../redux/actions/skipCounter';
+import { useDispatch,connect } from 'react-redux';
 
+//const motivotarefanaorealizada = ({ navigation,incrementCounter, incrementSkipCounter }) => {
 const motivotarefanaorealizada = ({ navigation }) => {
     const dispatch = useDispatch();
 
@@ -22,8 +24,12 @@ const motivotarefanaorealizada = ({ navigation }) => {
                     <TouchableOpacity
                         style={styles.botaoTelaMotivo}
                         onPress={() => {
-                            navigation.navigate('Tarefas do Dia');
+                           // incrementCounter();
+                            //incrementSkipCounter();
+                           // dispatch(skipActions.incrementSkip());
                             dispatch(actions.increment());
+                            navigation.navigate('Tarefas do Dia');
+
                         }}>
                         <Text style={styles.textButton}>Enviar</Text>
                     </TouchableOpacity>
@@ -33,4 +39,14 @@ const motivotarefanaorealizada = ({ navigation }) => {
     )
 }
 
+//const mapDispatchToProps = dispatch =>({
+ //   incrementCounter:() => dispatch({
+  //      type: "INCREMENT_COUNTER"
+   // }),
+    //incrementSkipCounter:() => dispatch({
+     //   type: "INCREMENT_SKIP"
+    //}),
+//})
+
+//export default connect(null,mapDispatchToProps)(motivotarefanaorealizada);
 export default motivotarefanaorealizada;
