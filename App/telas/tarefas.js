@@ -60,7 +60,7 @@ const Tarefas = ({ navigation }) => {
           <Tarefa
             title={tarefasLista[counter].titulo}
             text={tarefasLista[counter].descricao}
-            horario={tarefasLista[counter].horario} 
+           // horario={tarefasLista[counter].horario} 
             image={tarefasLista[counter].imagem}/>
         </View>
 

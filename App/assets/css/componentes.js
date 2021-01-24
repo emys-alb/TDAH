@@ -123,6 +123,44 @@ const stylesComponentes = StyleSheet.create({
         height:hp("18%"),
         alignSelf:"center",
         marginTop:hp("1%"),
+    },
+    textContainerTaskListing:{
+        backgroundColor: "#6E76E4",
+        borderRadius: 5,
+        width: wp('90%'),
+        height: hp('10%'),
+        marginTop:hp("1%"),
+        alignSelf:"center",
+    },
+    taskImageListing:{
+        width:wp("15%"),
+        height:hp("7%"),
+        alignSelf:"flex-end",
+        marginTop:hp("-10.5%"),
+        marginRight:wp("2%"),
+    },
+    titleTaskListing: {
+        fontWeight: "500",
+        fontSize: hp('3.6%'),
+        color: "#FF7C48",
+        justifyContent:"flex-start",
+    },
+    taskTimeListing:{
+        color: "#FFFFFF",
+        fontSize:hp("3%"),
+        alignSelf:"flex-start",
+        marginLeft:wp("3%"),
+    },
+    buttonListingTask:{
+        alignSelf: "center",
+        alignContent: "center",
+        justifyContent: "center",
+        backgroundColor: "#FF7C48",
+        marginTop: hp('1%'),
+        marginBottom: hp('1%'),
+        borderRadius: 10,
+        width: wp('60%'),
+        height: hp('10%'),
     }
 });
 
