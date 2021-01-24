@@ -222,6 +222,12 @@ const styles = StyleSheet.create({
         borderBottomColor:"#000000",
         padding:"2%",
         marginTop:hp("1%"),
+    },
+    titleDayTasks:{
+        color:"#FF7C48",
+        fontSize:hp("4%"),
+        alignSelf:"center",
+        padding:"1%",
     }
 });
 

@@ -1,4 +1,4 @@
 import { combineReducers } from 'redux';
 import counter from './counter';
-
-export default combineReducers({ counter });
+import skipCounter from './skipCounter';
+export default combineReducers({ counter, skipCounter});

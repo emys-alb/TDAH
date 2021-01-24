@@ -18,7 +18,7 @@ const telaInicio = ({ navigation }) => {
                 <Image style={styles.planeta} source={require('../../assets/img/planet.png')} />
                 <Text style={stylesComponentes.titleInicial}>Uma {'\n'} aventura {'\n'}no espaço!</Text>
             </View>
-            <TouchableOpacity style={stylesComponentes.botaoLaranja}  onPress={() => navigation.navigate('Tarefas do Dia')}>
+            <TouchableOpacity style={stylesComponentes.botaoLaranja}  onPress={() => navigation.navigate('lista tarefas')}>
                 <Text style={styles.textButtonTarefaN}>Começar Aventura!</Text>
             </TouchableOpacity>
             <Image style={styles.ship} source={require('../../assets/img/rocket-ship.png')} />
