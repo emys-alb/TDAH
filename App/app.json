@@ -4,9 +4,20 @@
   
   "expo": {
     "name": "TDAH",
-    "icon": "./assets/icon/astronaut.png",
     "version": "1.0.0",
     "slug": "tripulante-da-aventura",
+    "privacy": "public",
+    "platforms": [
+      "ios",
+      "android"
+    ],
+    "orientation": "portrait",
+    "icon": "./assets/icon/iconTDAH.png",
+    "splash": {
+      "image": "./assets/icon/splashTDAH.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#000"
+    },
     "ios": {
       "bundleIdentifier": "com.tdah.tripulanteDaAventura",
       "buildNumber": "1.0.0"
