@@ -5,7 +5,7 @@ import contador from '../services/contador';
 import stylesComponentes from "../assets/css/componentes";
 import styles from "../assets/css/telas";
 
-const Parabens = ({ navigation }) => {
+const parabens = ({ navigation }) => {
     return(
         <View style={styles.container}>
             
@@ -30,4 +30,4 @@ const Parabens = ({ navigation }) => {
     )
 }
 
-export default Parabens;
+export default parabens;

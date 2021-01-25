@@ -13,6 +13,7 @@ import finalizacaoScreen from "./telas/tarefasFinalizadas";
 import jogoScreen from './telas/jogo/tictactoe';
 import menuScreen from './telas/telasIniciais/menu';
 import dayTaskScreen from './telas/telasIniciais/dayTasks';
+import motivosScreen from './telas/motivos';
 //Redux
 import { Provider } from 'react-redux';
 import store from './redux/store';
@@ -41,6 +42,7 @@ function App(props) {
           <Stack.Screen name="Jogo da Velha" component={jogoScreen} />
           <Stack.Screen name="menu" component={menuScreen} />
           <Stack.Screen name="lista tarefas" component={dayTaskScreen} />
+          <Stack.Screen name="motivos" component={motivosScreen} />
         </Stack.Navigator>
       </NavigationContainer>
     </Provider>

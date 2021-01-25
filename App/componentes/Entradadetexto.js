@@ -3,7 +3,7 @@ import { TextInput } from 'react-native';
 import stylesComponentes from '../assets/css/componentes'
 
 const Entradadetexto = () => {
-  const [value, onChangeText] = React.useState('Informe o motivo aqui');
+  const [value, onChangeText] = React.useState('');
 
   return (
     <TextInput style={stylesComponentes.areaDeTexto}
