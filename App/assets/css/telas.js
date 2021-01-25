@@ -228,7 +228,15 @@ const styles = StyleSheet.create({
         fontSize:hp("4%"),
         alignSelf:"center",
         padding:"1%",
-    }
+    },
+    buttonMotivosScreen:{
+        backgroundColor:"#00AA95",
+        width:wp('75%'),
+        height:hp('12%'),
+        borderRadius:10,
+        justifyContent: "center",
+        marginTop:hp("1%"),
+    },
 });
 
 export default styles;

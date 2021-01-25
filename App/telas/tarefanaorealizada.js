@@ -17,7 +17,7 @@ const tarefanaorealizada = ({navigation}) => {
                          </TouchableOpacity>
                     </View>
                     <View style={styles.buttonsAvaliacaoArea}>
-                        <TouchableOpacity style={styles.botaoCinzaTelaAvaliacao} onPress={() =>navigation.navigate('motivo')}>
+                        <TouchableOpacity style={styles.botaoCinzaTelaAvaliacao} onPress={() =>navigation.navigate('motivos')}>
                                 <Text style={styles.textButtonTarefa}>Pular Missão</Text>
                         </TouchableOpacity>
                     </View>

@@ -71,17 +71,14 @@ const Tarefas = ({ navigation }) => {
             <Text style={styles.textButtonTarefa}>Não Realizada</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.botaoVerdeTelaTarefa} onPress={() => {
-            updatePercent(0.1);
-
-            if (counter === 9) {
-              setValue(0)
-              navigation.navigate('Missoes Finalizadas');
-            }else{
-              navigation.navigate('Avalie sua Tarefa');
-              atualizaMissao();
+              if (counter === 9) {
+                setValue(0)
+                navigation.navigate('Missoes Finalizadas');
+              }else{
+                updatePercent(0.1);
+                navigation.navigate('Avalie sua Tarefa');
+                atualizaMissao();
             }
-
-
           }}>
             <Text style={styles.textButtonTarefa}>Realizada</Text>
           </TouchableOpacity>
