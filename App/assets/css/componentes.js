@@ -16,6 +16,7 @@ const stylesComponentes = StyleSheet.create({
         padding: 8,
         backgroundColor: "#6E76E4",
         borderRadius: 26,
+        alignSelf: "center",
         width: wp('90%'),
         height: hp('60%'),
         paddingTop: hp('3%'),

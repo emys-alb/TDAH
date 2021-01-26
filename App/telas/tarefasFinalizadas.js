@@ -26,6 +26,7 @@ const tarefasFinalizadas = ({ navigation }) => {
             <View style={styles.circuloAstroParabens}>
                 <Image style={styles.astroAjuda} source={require('../assets/img/astronaut-pescando.png')} />
             </View>
+            <Text style={styles.textSobre}>Parabéns por ter concluído todas as tarefas</Text>
             <View style={styles.icones}>
                 <View>
                     <Image style={styles.icone} source={require('../assets/img/medalha.png')} />

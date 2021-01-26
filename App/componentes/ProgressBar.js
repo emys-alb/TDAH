@@ -6,7 +6,8 @@ import stylesComponentes from '../assets/css/componentes'
 
 const BarraDeProgresso = ({ value }) => {
     let progresso = Math.round(value * 100);
-    let width = progresso - 20
+    let width = progresso - 20;
+
     return(
         <View style={stylesComponentes.progressBarContainer}>
             <View style={stylesComponentes.progressBar}>

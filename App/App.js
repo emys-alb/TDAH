@@ -41,7 +41,7 @@ function App(props) {
           <Stack.Screen name="Missoes Finalizadas" component={finalizacaoScreen} />
           <Stack.Screen name="Jogo da Velha" component={jogoScreen} />
           <Stack.Screen name="menu" component={menuScreen} />
-          <Stack.Screen name="lista tarefas" component={dayTaskScreen} />
+          <Stack.Screen name="Lista Tarefas" component={dayTaskScreen} />
           <Stack.Screen name="motivos" component={motivosScreen} />
         </Stack.Navigator>
       </NavigationContainer>
