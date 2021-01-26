@@ -139,7 +139,7 @@ const stylesComponentes = StyleSheet.create({
         width:wp("15%"),
         height:hp("7%"),
         alignSelf:"flex-end",
-        marginTop:hp("-10.5%"),
+        marginTop:hp("-7%"),
         marginRight:wp("2%"),
     },
     titleTaskListing: {

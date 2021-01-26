@@ -9,7 +9,7 @@ const Tarefa = (props) => {
         <Text style={stylesComponentes.titleTarefa}> {props.title} </Text>
         <View style={stylesComponentes.textContainerTarefa}>
             <Text style={stylesComponentes.textTarefa}>{props.text}</Text>
-            <Image style={stylesComponentes.taskImage} source={props.image}/>
+            <Image resizeMode="contain" style={stylesComponentes.taskImage} source={props.image}/>
         </View>
        </View>
     )

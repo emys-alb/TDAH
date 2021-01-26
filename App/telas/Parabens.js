@@ -10,7 +10,7 @@ const parabens = ({ navigation }) => {
         <View style={styles.container}>
             
             <View style={styles.circuloAstroParabens}>
-                <Image style={styles.astroAjuda} source={require('../assets/img/astronaut.png')} />
+                <Image resizeMode="contain" style={styles.astroAjuda} source={require('../assets/img/astronaut.png')} />
             </View>
             <View>
                 <Text style={stylesComponentes.titleParabens}>{"Parabéns por ter concluido a missão!\nA galáxia está salva graças a você.\nContinue assim."}</Text>

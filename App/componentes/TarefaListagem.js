@@ -9,7 +9,7 @@ const TarefaListagem = (props) => {
         <View style={stylesComponentes.textContainerTaskListing}>
         <Text style={stylesComponentes.titleTaskListing}> {props.title} </Text>
         <Text style={stylesComponentes.taskTimeListing}>{props.horario}{'\n'}</Text>
-            <Image style={stylesComponentes.taskImageListing} source={props.image}/>
+            <Image resizeMode="contain" style={stylesComponentes.taskImageListing} source={props.image}/>
         </View>
        </View>
     )

@@ -7,7 +7,7 @@ const pedirajuda = ({ navigation }) => {
     return(
         <View style={styles.container}>
         <View style={styles.circuloAstroAjuda}>
-            <Image style={styles.astroAjuda} source={require('../assets/img/astronaut-pescando.png')} />
+            <Image resizeMode="contain" style={styles.astroAjuda} source={require('../assets/img/astronaut-pescando.png')} />
         </View>
         <View>
             <Avaliacao title="Algumas missões são muito dificeis para uma pessoa só.

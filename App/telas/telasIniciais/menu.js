@@ -8,7 +8,7 @@ const menu = ({ navigation }) => {
     return(
         <View style={styles.container}>
             <TouchableOpacity style={stylesComponentes.iconePergunta} onPress={() => navigation.navigate('Iniciar')}>
-                <Image style={styles.voltar} source={require('../../assets/img/seta-de-retorno.png')}/>
+                <Image resizeMode="contain" style={styles.voltar} source={require('../../assets/img/seta-de-retorno.png')}/>
             </TouchableOpacity>
             <View style={styles.textContainerMenu}>
                 <Text style={styles.menuText}>Como jogar</Text>

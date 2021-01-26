@@ -4,10 +4,10 @@ import { Image, Text, TouchableOpacity, View } from 'react-native';
 import styles from '../assets/css/telas';
 
 //Redux
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 const tarefasFinalizadas = ({ navigation }) => {
-    const [counter,skipCounter] = useSelector(store => {
+    const [counter, skipCounter] = useSelector(store => {
         //console.log(store);
         return [store.counter,store.skipCounter];
     });
@@ -24,17 +24,17 @@ const tarefasFinalizadas = ({ navigation }) => {
     return (
         <View style={styles.container}>
             <View style={styles.circuloAstroParabens}>
-                <Image style={styles.astroAjuda} source={require('../assets/img/astronaut-pescando.png')} />
+                <Image resizeMode="contain" style={styles.astroAjuda} source={require('../assets/img/astronaut-pescando.png')} />
             </View>
             <Text style={styles.textSobre}>Parabéns por ter concluído todas as tarefas</Text>
             <View style={styles.icones}>
                 <View>
-                    <Image style={styles.icone} source={require('../assets/img/medalha.png')} />
+                    <Image resizeMode="contain" style={styles.icone} source={require('../assets/img/medalha.png')} />
                     <Text style={styles.textButton}>
                         Nível {nivel}</Text>
                 </View>
                 <View>
-                    <Image style={styles.icone} source={require('../assets/img/completed-task.png')} />
+                    <Image resizeMode="contain" style={styles.icone} source={require('../assets/img/completed-task.png')} />
                     <Text style={styles.textButton}>{skipCounter}/{counter + 1}</Text>
                 </View>
             </View>
