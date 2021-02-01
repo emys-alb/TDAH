@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
     
     buttonsContainerArea:{
         padding: 8,
-        backgroundColor: "#6E76E4",
+        backgroundColor: "#6169E2",
         borderRadius: 26,
         width: wp('90%'),
         height: hp('90%'),
@@ -75,7 +75,7 @@ const styles = StyleSheet.create({
     },
 
     botaoTelaMotivo:{
-        backgroundColor:"#00AA95",
+        backgroundColor:"#008575",
         width:wp('35%'),
         height:hp('8%'),
         alignSelf:"flex-end",
@@ -84,7 +84,7 @@ const styles = StyleSheet.create({
     },
 
     botaoVermelhoTelaTarefa:{
-        backgroundColor:"#FF415B",
+        backgroundColor:"#EE0021",
         width:wp('40%'),
         height:hp('10%'),
         borderRadius:10,
@@ -92,7 +92,7 @@ const styles = StyleSheet.create({
     },
 
     botaoVerdeTelaTarefa:{
-        backgroundColor:"#00AA95",
+        backgroundColor:"#008575",
         width:wp('40%'),
         height:hp('10%'),
         borderRadius:10,
@@ -100,7 +100,7 @@ const styles = StyleSheet.create({
     },
 
     botaoVerdeTelaAvaliacao:{
-        backgroundColor:"#00AA95",
+        backgroundColor:"#008575",
         width:wp('40%'),
         height:hp('10%'),
         borderRadius:10,
@@ -116,14 +116,14 @@ const styles = StyleSheet.create({
     },
 
     botaoVermelhoTelaAvaliacao:{
-        backgroundColor:"#FF415B",
+        backgroundColor:"#EE0021",
         width:wp('40%'),
         height:hp('10%'),
         borderRadius:10,
         justifyContent: "center",
     },
     botaoVerdeFinalizadas:{
-        backgroundColor:"#00AA95",
+        backgroundColor:"#008575",
         width:wp('40%'),
         height:hp('10%'),
         borderRadius:10,
@@ -230,7 +230,7 @@ const styles = StyleSheet.create({
         padding:"1%",
     },
     buttonMotivosScreen:{
-        backgroundColor:"#00AA95",
+        backgroundColor:"#008575",
         width:wp('75%'),
         height:hp('12%'),
         borderRadius:10,

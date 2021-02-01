@@ -14,7 +14,7 @@ const stylesComponentes = StyleSheet.create({
 
     textContainerTarefa: {
         padding: 8,
-        backgroundColor: "#6E76E4",
+        backgroundColor: "#6169E2",
         borderRadius: 26,
         alignSelf: "center",
         width: wp('90%'),
@@ -92,7 +92,7 @@ const stylesComponentes = StyleSheet.create({
         alignSelf: "center",
         alignContent: "center",
         justifyContent: "center",
-        backgroundColor: "#FF7C48",
+        backgroundColor: "#D93E00",
         marginTop: hp('2%'),
         borderRadius: 10,
         width: wp('40%'),
@@ -128,7 +128,7 @@ const stylesComponentes = StyleSheet.create({
         marginTop:hp("1%"),
     },
     textContainerTaskListing:{
-        backgroundColor: "#6E76E4",
+        backgroundColor: "#6169E2",
         borderRadius: 5,
         width: wp('90%'),
         height: hp('10%'),
