@@ -4,9 +4,11 @@ import { Image, Text, TouchableOpacity, View } from 'react-native';
 import styles from '../assets/css/telas';
 
 //Redux
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import * as actions from '../redux/actions/counter';
 
 const tarefasFinalizadas = ({ navigation }) => {
+    const dispatch = useDispatch();
     const [counter, skipCounter] = useSelector(store => {
         //console.log(store);
         return [store.counter,store.skipCounter];
@@ -38,7 +40,10 @@ const tarefasFinalizadas = ({ navigation }) => {
                     <Text style={styles.textButton}>{skipCounter}/{counter + 1}</Text>
                 </View>
             </View>
-            <TouchableOpacity style={styles.botaoVerdeFinalizadas} onPress={() => navigation.navigate('Iniciar')}>
+            <TouchableOpacity style={styles.botaoVerdeFinalizadas} onPress={() =>{
+                 navigation.navigate('Iniciar');
+                 dispatch(actions.reset());
+                }}>
                 <Text style={styles.textButtonTarefa}>Curtir Games</Text>
             </TouchableOpacity>
         </View>
