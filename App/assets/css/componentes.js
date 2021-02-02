@@ -158,7 +158,7 @@ const stylesComponentes = StyleSheet.create({
         alignSelf: "center",
         alignContent: "center",
         justifyContent: "center",
-        backgroundColor: "#FF7C48",
+        backgroundColor: "#D93E00",
         marginTop: hp('1%'),
         marginBottom: hp('1%'),
         borderRadius: 10,

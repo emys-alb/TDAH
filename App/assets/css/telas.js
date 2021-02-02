@@ -141,7 +141,7 @@ const styles = StyleSheet.create({
         alignItems: "center",
         justifyContent: "space-around",
         flexDirection: "row",
-        marginTop: hp('5%'),
+        marginTop: hp('1.4%'),
         marginBottom: hp('5%'),
     },
 
@@ -235,6 +235,7 @@ const styles = StyleSheet.create({
         height:hp('12%'),
         borderRadius:10,
         justifyContent: "center",
+        textAlign: "center",
         marginTop:hp("1%"),
     },
 });
