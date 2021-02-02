@@ -102,23 +102,26 @@ const styles = StyleSheet.create({
     botaoVerdeTelaAvaliacao:{
         backgroundColor:"#008575",
         width:wp('40%'),
-        height:hp('10%'),
+        height:hp('25%'),
         borderRadius:10,
-        justifyContent: "center",
+        justifyContent: "flex-start",
+        marginRight:wp('42%'),
     },
 
     botaoCinzaTelaAvaliacao:{
         backgroundColor:"#545C60",
         width:wp('40%'),
-        height:hp('10%'),
+        height:hp('25%'),
         borderRadius:10,
-        justifyContent: "center",
+        justifyContent: "flex-start",
+        marginLeft:wp('43%'),
+        marginTop: hp('-27%'),
     },
 
     botaoVermelhoTelaAvaliacao:{
         backgroundColor:"#EE0021",
         width:wp('40%'),
-        height:hp('10%'),
+        height:hp('25%'),
         borderRadius:10,
         justifyContent: "center",
     },

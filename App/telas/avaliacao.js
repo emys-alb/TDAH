@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
-import { View, TouchableOpacity, Text} from 'react-native';
+import { View, TouchableOpacity, Text,Image} from 'react-native';
 import styles from '../assets/css/telas';
+import stylesComponentes from '../assets/css/componentes';
 import Avaliacao from '../componentes/Avaliacao';
 import BarraDeProgresso from '../componentes/ProgressBar';
 //Redux
@@ -18,6 +19,7 @@ const avaliacao = ({navigation}) => {
                             <TouchableOpacity style={styles.botaoVerdeTelaAvaliacao} onPress={() =>
                                                 navigation.navigate('Parabens')
                            }>
+                            <Image resizeMode="contain"  style={stylesComponentes.taskImage} source={require('../assets/img/happy-astronaut.png')} />
                                 <Text style={styles.textButtonTarefa}>Bem</Text>
                             </TouchableOpacity>
                         </View>
@@ -26,6 +28,7 @@ const avaliacao = ({navigation}) => {
                                                 navigation.navigate('Parabens')
                                               }
                             >
+                                <Image resizeMode="contain"  style={stylesComponentes.taskImage} source={require('../assets/img/normal-astronaut.png')} />
                                 <Text style={styles.textButtonTarefa}>Normal</Text>
                             </TouchableOpacity>
                         </View>
@@ -34,6 +37,7 @@ const avaliacao = ({navigation}) => {
                                                 navigation.navigate('Parabens')
                                               }
                             >
+                            <Image resizeMode="contain"  style={stylesComponentes.taskImage} source={require('../assets/img/sad-astronaut.png')} />
                                 <Text style={styles.textButtonTarefa}>Chateado</Text>
                             </TouchableOpacity>
                         </View>

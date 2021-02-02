@@ -21,37 +21,52 @@ const motivos = ({ navigation }) => {
             <View style={{ alignItems: "center" }}>
                 <View style={styles.buttonsContainerArea}>
                     <Avaliacao title="Por que você vai pular essa missão?" />
+
+
                     <TouchableOpacity style={styles.buttonMotivosScreen} onPress={() => {
                         dispatch(actions.increment());
+                       // dispatch(skipActions.skipincrement());
                         navigation.navigate('Tarefas do Dia');
                     }}>
                         <Text style={styles.textButton}>Falta de ajuda</Text>
                     </TouchableOpacity>
+
+
                     <TouchableOpacity style={styles.buttonMotivosScreen} onPress={() => {
                          if (counter === 9) {
                             setValue(0)
                             navigation.navigate('Missoes Finalizadas');
                           }else{
                         dispatch(actions.increment());
+                       // dispatch(skipActions.skipincrement());
                         navigation.navigate('Tarefas do Dia');
                           }
                     }
                     }>
                         <Text style={styles.textButton}>Não gosto dessa missão</Text>
                     </TouchableOpacity>
+
+
                     <TouchableOpacity style={styles.buttonMotivosScreen} onPress={() => {
                          if (counter === 9) {
                             setValue(0)
                             navigation.navigate('Missoes Finalizadas');
                           }else{
+                        //dispatch(skipActions.skipincrement());
                         dispatch(actions.increment());
                         navigation.navigate('Tarefas do Dia');
                     }}
                     }>
                         <Text style={styles.textButton}>Muito Difícil</Text>
                     </TouchableOpacity>
+
+
                     <TouchableOpacity style={styles.buttonMotivosScreen} onPress={() =>
-                        navigation.navigate('motivo')
+                    {
+                       // dispatch(skipActions.skipincrement());
+                        navigation.navigate('motivo');
+                    }
+                        
                     }>
                         <Text style={styles.textButton}>Escrever Motivo</Text>
                     </TouchableOpacity>
