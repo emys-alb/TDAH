@@ -24,14 +24,11 @@ const motivotarefanaorealizada = ({ navigation }) => {
                     <TouchableOpacity
                         style={styles.botaoTelaMotivo}
                         onPress={() => {
-                           // incrementCounter();
-                            //incrementSkipCounter();
-                           // dispatch(skipActions.incrementSkip());
                            if (counter === 9) {
                             setValue(0)
                             navigation.navigate('Missoes Finalizadas');
                           }else{
-                            dispatch(actions.increment(),);
+                            dispatch(actions.increment(),skipActions.skipincrement());
                             navigation.navigate('Tarefas do Dia');
                           }
                         }}>

@@ -84,7 +84,7 @@ const styles = StyleSheet.create({
     },
 
     botaoVermelhoTelaTarefa:{
-        backgroundColor:"#EE0021",
+        backgroundColor:"#D93E00",
         width:wp('40%'),
         height:hp('10%'),
         borderRadius:10,
@@ -241,6 +241,31 @@ const styles = StyleSheet.create({
         textAlign: "center",
         marginTop:hp("1%"),
     },
+    buttonGreenTaskNotDone:{
+        backgroundColor:"#008575",
+        width:wp('40%'),
+        height:hp('15%'),
+        borderRadius:10,
+        justifyContent: "center",
+        marginRight:wp('42%'),
+    },
+    buttonGreyTaskNotDone:{
+        backgroundColor:"#545C60",
+        width:wp('40%'),
+        height:hp('15%'),
+        borderRadius:10,
+        justifyContent: "center",
+        marginLeft:wp('43%'),
+        marginTop: hp('-17%'),
+    },
+    buttonRedTaskNotDone:{
+        backgroundColor:"#D93E00",
+        width:wp('40%'),
+        height:hp('15%'),
+        borderRadius:10,
+        justifyContent: "center",
+    },
+
 });
 
 export default styles;
