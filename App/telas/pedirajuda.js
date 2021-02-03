@@ -13,7 +13,7 @@ const pedirajuda = ({ navigation }) => {
             <Avaliacao title="Algumas missões são muito dificeis para uma pessoa só.
                 Procure um responsável para lhe ajudar com essa tarefa." />
                  <View style={styles.buttonsAjudaArea}>
-                    <TouchableOpacity style={styles.botaoVerdeTelaAvaliacao} onPress={() => navigation.navigate('Tarefas do Dia')}>
+                    <TouchableOpacity style={styles.buttonHelpScreen} onPress={() => navigation.navigate('Tarefas do Dia')}>
                                 <Text style={styles.textButtonTarefaN}>Voltar para Missão</Text>
                     </TouchableOpacity>
                  </View>
