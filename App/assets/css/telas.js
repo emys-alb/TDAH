@@ -265,6 +265,14 @@ const styles = StyleSheet.create({
         borderRadius:10,
         justifyContent: "center",
     },
+    buttonHelpScreen:{
+        backgroundColor:"#008575",
+        width:wp('40%'),
+        height:hp('15%'),
+        borderRadius:10,
+        justifyContent: "center",
+        
+    },
 
 });
 
