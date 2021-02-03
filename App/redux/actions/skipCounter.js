@@ -1,8 +1,8 @@
 //export const INCREMENT = 'INCREMENT_SKIP';
-export const INCREMENT = 'INCREMENT';
+export const SKIPINCREMENT = 'SKIPINCREMENT';
 //export function incrementSkip() {
-export function increment() {
+export function skipincrement() {
   return {
-    type: INCREMENT
+    type: SKIPINCREMENT
   }
 }

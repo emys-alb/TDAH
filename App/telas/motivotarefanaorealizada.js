@@ -31,7 +31,7 @@ const motivotarefanaorealizada = ({ navigation }) => {
                             setValue(0)
                             navigation.navigate('Missoes Finalizadas');
                           }else{
-                            dispatch(actions.increment());
+                            dispatch(actions.increment(),);
                             navigation.navigate('Tarefas do Dia');
                           }
                         }}>
