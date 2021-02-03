@@ -37,7 +37,7 @@ const tarefasFinalizadas = ({ navigation }) => {
                 </View>
                 <View>
                     <Image resizeMode="contain" style={styles.icone} source={require('../assets/img/completed-task.png')} />
-                    <Text style={styles.textButton}>{skipCounter}/{counter + 1}</Text>
+                    <Text style={styles.textButton}>9/{counter + 1}</Text>
                 </View>
             </View>
             <TouchableOpacity style={styles.botaoVerdeFinalizadas} onPress={() =>{

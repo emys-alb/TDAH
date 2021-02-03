@@ -12,17 +12,17 @@ const tarefanaorealizada = ({ navigation }) => {
                     <Avaliacao title="Parabéns pela tentativa. Se teve dificuldade considere pedir ajuda." />
 
                     <View style={styles.buttonsAvaliacaoArea}>
-                        <TouchableOpacity style={styles.botaoVerdeTelaAvaliacao} onPress={() => navigation.navigate('Tarefas do Dia')}>
+                        <TouchableOpacity style={styles.buttonGreenTaskNotDone} onPress={() => navigation.navigate('Tarefas do Dia')}>
                             <Text style={styles.textButtonTarefaN}>Continuar Tentando</Text>
                         </TouchableOpacity>
                     </View>
                     <View style={styles.buttonsAvaliacaoArea}>
-                        <TouchableOpacity style={styles.botaoCinzaTelaAvaliacao} onPress={() => navigation.navigate('motivos')}>
+                        <TouchableOpacity style={styles.buttonGreyTaskNotDone} onPress={() => navigation.navigate('motivos')}>
                             <Text style={styles.textButtonTarefa}>Pular Missão</Text>
                         </TouchableOpacity>
                     </View>
                     <View style={styles.buttonsAvaliacaoArea}>
-                        <TouchableOpacity style={styles.botaoVermelhoTelaAvaliacao} onPress={() => navigation.navigate('ajuda')}>
+                        <TouchableOpacity style={styles.buttonRedTaskNotDone} onPress={() => navigation.navigate('ajuda')}>
                             <Text style={styles.textButtonTarefaN}>Preciso de Ajuda</Text>
                         </TouchableOpacity>
                     </View>
