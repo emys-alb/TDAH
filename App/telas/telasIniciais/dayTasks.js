@@ -6,6 +6,7 @@ import styles from '../../assets/css/telas';
 import Tarefa from '../../componentes/Tarefa';
 import TarefaListagem from '../../componentes/TarefaListagem';
 import stylesComponentes from '../../assets/css/componentes';
+import Header from '../../componentes/Header'
 //import tarefasData from '../services/sqlite/tarefasData';
 
 
@@ -25,7 +26,7 @@ const dayTask = ({ navigation }) => {
       ]);
   return (
     <View style={styles.container}>
-        <Text style={styles.titleDayTasks}>Suas missões do dia!</Text>
+        <Header titulo='Suas missões do dia!' goHome={()=> navigation.navigate('Iniciar')} goBack={() => navigation.goBack()} navigator={navigation}/>
         <ScrollView >
         { tarefasLista.map(item => {
             return <TarefaListagem

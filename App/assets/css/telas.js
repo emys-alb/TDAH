@@ -1,5 +1,6 @@
 import { StyleSheet, Dimensions } from "react-native"
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
+
 const styles = StyleSheet.create({
     astroAjuda:{
         width: wp('40%'),
@@ -55,6 +56,7 @@ const styles = StyleSheet.create({
         width: wp('100%'),
         height: hp('100%'),
         marginTop: hp('4%'),
+        fontFamily: 'Space'
     },
     
     circuloAstroParabens:{
@@ -166,35 +168,40 @@ const styles = StyleSheet.create({
         marginTop:hp("2%"),
     },
     textButton:{
-        fontWeight:"800",
+        fontWeight:"200",
         color:"#FFFFFF",
         fontSize:hp('4.5%'),
-        alignSelf:"center"
+        alignSelf:"center",
+        fontFamily: "Space"
     },
 
     textButtonTarefa:{
-        fontWeight:"800",
+        fontWeight:"200",
         color:"#FFFFFF",
         fontSize:hp('2.8%'),
         textAlign:"center",
+        fontFamily: 'Space',
     },
 
     textButtonTarefaN:{
-        fontWeight:"800",
+        fontWeight:"200",
         color:"#FFFFFF",
-        fontSize:hp('2.8%'),
+        fontSize:hp('4%'),
         textAlign:"center",
+        fontFamily: 'Space',
+        
     },
 
     textSobre: {
-        fontWeight:"800",
+        fontWeight:"200",
         color:"#FFFFFF",
         fontSize: hp('5%'),
         marginRight: wp('5%'),
         marginLeft: wp('5%'),
         textAlign:"center",
         justifyContent: "center",
-        marginBottom: hp('7%')
+        marginBottom: hp('7%'),
+        fontFamily: 'Space'
     },
 
     voltar: {
@@ -215,6 +222,7 @@ const styles = StyleSheet.create({
         paddingBottom: hp('3%'),
         marginLeft:wp("5%"),
         marginTop:hp("5%"),
+        fontFamily: "Space"
     },
     menuText:{
         fontWeight:"400",
@@ -225,12 +233,15 @@ const styles = StyleSheet.create({
         borderBottomColor:"#000000",
         padding:"2%",
         marginTop:hp("1%"),
+        fontFamily: "Space"
+        
     },
     titleDayTasks:{
         color:"#FF7C48",
         fontSize:hp("4%"),
         alignSelf:"center",
         padding:"1%",
+        fontFamily: "Space"
     },
     buttonMotivosScreen:{
         backgroundColor:"#008575",

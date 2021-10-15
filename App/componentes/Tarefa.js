@@ -2,11 +2,11 @@ import React from "react";
 import { Text, View, Image } from "react-native";
 
 import stylesComponentes from '../assets/css/componentes'
+import Header from "./Header";
 
 const Tarefa = (props) => {
     return(
-        <View>
-        <Text style={stylesComponentes.titleTarefa}> {props.title} </Text>
+        <View>    
         <View style={stylesComponentes.textContainerTarefa}>
             <Text style={stylesComponentes.textTarefa}>{props.text}</Text>
             <Image resizeMode="contain" style={stylesComponentes.taskImage} source={props.image}/>

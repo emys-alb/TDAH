@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 //Screens
 import inicio from './telas/telasIniciais/inicio';
@@ -22,7 +22,32 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 const Stack = createStackNavigator();
 
+import * as Font from 'expo-font'
+
+import AppLoading from 'expo-app-loading';
+
 function App(props) {
+
+  const [loaded, setLoaded] = useState(false);
+
+  const useFonts = async() => {
+    await Font.loadAsync({
+      'Space': require('./assets/fonts/Space.ttf')
+    })
+  }
+
+  const loadFonts = async() => {
+    await useFonts();
+  }
+
+  if (!loaded) {
+    return (<AppLoading 
+      startAsync={loadFonts}
+      onFinish={() => setLoaded(true)}
+      onError={() => {console.log("Erro ao carregar fontes.")}}
+    />)
+  }
+
   return (
     <Provider store={store}>
       <NavigationContainer>

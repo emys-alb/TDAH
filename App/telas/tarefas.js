@@ -11,6 +11,8 @@ import * as actions from '../redux/actions/counter';
 
 //Redux
 import { useDispatch, useSelector } from 'react-redux';
+import Header from '../componentes/Header';
+import { useLinkProps } from '@react-navigation/native';
 
 const Tarefas = ({ navigation }) => {
   const [value, setValue] = useState(0);
@@ -55,6 +57,7 @@ const Tarefas = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <BarraDeProgresso value={value} />
+      <Header titulo={tarefasLista[counter].titulo} navigator={navigation}/>
       <View>
         <View style={{ alignItems: "center" }}>
           <Tarefa
