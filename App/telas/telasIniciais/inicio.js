@@ -1,27 +1,26 @@
 import React from 'react';
 import { Text, View, Image, TouchableOpacity } from "react-native";
 
-import stylesComponentes from '../../assets/css/componentes';
-import styles from '../../assets/css/telas';
+import stylesInicio from '../../assets/css/telas/telasIniciais/inicio';
 
 const telaInicio = ({ navigation }) => {
     return(
-        <View style={styles.container}> 
-            <TouchableOpacity style={stylesComponentes.iconePergunta} onPress={() => navigation.navigate('menu')}>
-                <Image resizeMode="contain" style={styles.duvida} source={require('../../assets/img/menu-icon.png')}/>
+        <View style={stylesInicio.container}> 
+            <TouchableOpacity style={stylesInicio.iconePergunta} onPress={() => navigation.navigate('menu')}>
+                <Image resizeMode="contain" style={stylesInicio.duvida} source={require('../../assets/img/menu-icon.png')}/>
             </TouchableOpacity>
-            <View style={styles.icones}>
-                <Text style={stylesComponentes.titleInicial}>TDAH</Text>
-                <Image resizeMode="contain" style={styles.planetaTerra} source={require('../../assets/img/planet-earth.png')} />
+            <View style={stylesInicio.icones}>
+                <Text style={stylesInicio.titleInicial}>TDAH</Text>
+                <Image resizeMode="contain" style={stylesInicio.planetaTerra} source={require('../../assets/img/planet-earth.png')} />
             </View>
-            <View style={styles.icones}>
-                <Image resizeMode="contain" style={styles.planeta} source={require('../../assets/img/planet.png')} />
-                <Text style={stylesComponentes.titleInicial}>Uma {'\n'} aventura {'\n'}no espaço!</Text>
+            <View style={stylesInicio.icones}>
+                <Image resizeMode="contain" style={stylesInicio.planeta} source={require('../../assets/img/planet.png')} />
+                <Text style={stylesInicio.titleInicial}>Uma {'\n'} aventura {'\n'}no espaço!</Text>
             </View>
-            <TouchableOpacity style={stylesComponentes.botaoLaranja}  onPress={() => navigation.navigate('Lista Tarefas')}>
-                <Text style={styles.textButtonTarefaN}>Começar Aventura!</Text>
+            <TouchableOpacity style={stylesInicio.botaoLaranja}  onPress={() => navigation.navigate('Lista Tarefas')}>
+                <Text style={stylesInicio.textButtonTarefaN}>Começar Aventura!</Text>
             </TouchableOpacity>
-            <Image resizeMode="contain" style={styles.ship} source={require('../../assets/img/rocket-ship.png')} />
+            <Image resizeMode="contain" style={stylesInicio.ship} source={require('../../assets/img/rocket-ship.png')} />
         </View>
     )
 }

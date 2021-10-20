@@ -2,10 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { View, TouchableOpacity, Text, ScrollView } from 'react-native';
 
 // Layout
-import styles from '../../assets/css/telas';
+import stylesDayTasks from '../../assets/css/telas/telasIniciais/dayTasks';
 import Tarefa from '../../componentes/Tarefa';
 import TarefaListagem from '../../componentes/TarefaListagem';
-import stylesComponentes from '../../assets/css/componentes';
 import Header from '../../componentes/Header'
 //import tarefasData from '../services/sqlite/tarefasData';
 
@@ -25,7 +24,7 @@ const dayTask = ({ navigation }) => {
     
       ]);
   return (
-    <View style={styles.container}>
+    <View style={stylesDayTasks.container}>
         <Header titulo='Suas missões do dia!' goHome={()=> navigation.navigate('Iniciar')} goBack={() => navigation.goBack()} navigator={navigation}/>
         <ScrollView >
         { tarefasLista.map(item => {
@@ -37,8 +36,8 @@ const dayTask = ({ navigation }) => {
             image={item.imagem}/>
         }) }
         </ScrollView>
-        <TouchableOpacity style={stylesComponentes.buttonListingTask}  onPress={() => navigation.navigate('Tarefas do Dia')}>
-                <Text style={styles.textButtonTarefaN}>Começar Missões</Text>
+        <TouchableOpacity style={stylesDayTasks.buttonListingTask}  onPress={() => navigation.navigate('Tarefas do Dia')}>
+                <Text style={stylesDayTasks.textButtonTarefaN}>Começar Missões</Text>
             </TouchableOpacity>
     </View>
   );
