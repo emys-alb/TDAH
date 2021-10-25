@@ -1,22 +1,21 @@
 import React from 'react';
 import { Text, View, Image, TouchableOpacity } from "react-native";
 
-import stylesComponentes from '../../assets/css/componentes';
-import styles from '../../assets/css/telas';
+import stylesMenu from '../../assets/css/telas/telasIniciais/menu';
 
 const menu = ({ navigation }) => {
     return(
-        <View style={styles.container}>
-            <TouchableOpacity style={stylesComponentes.iconePergunta} onPress={() => navigation.navigate('Iniciar')}>
-                <Image resizeMode="contain" style={styles.voltar} source={require('../../assets/img/seta-de-retorno.png')}/>
+        <View style={stylesMenu.container}>
+            <TouchableOpacity style={stylesMenu.iconePergunta} onPress={() => navigation.navigate('Iniciar')}>
+                <Image resizeMode="contain" style={stylesMenu.voltar} source={require('../../assets/img/seta-de-retorno.png')}/>
             </TouchableOpacity>
-            <View style={styles.textContainerMenu}>
-                <Text style={styles.menuText}>Como jogar</Text>
-                <Text style={styles.menuText}>Configurações</Text>
-                <Text style={styles.menuText}>Termos de uso e privacidade</Text>
-                <Text style={styles.menuText}>Reportar Bugs</Text>
-                <TouchableOpacity style={stylesComponentes.menuOption} onPress={() => navigation.navigate('Sobre')}>
-                <Text style={styles.menuText}>Sobre o Aplicativo</Text>
+            <View style={stylesMenu.textContainerMenu}>
+                <Text style={stylesMenu.menuText}>Como jogar</Text>
+                <Text style={stylesMenu.menuText}>Configurações</Text>
+                <Text style={stylesMenu.menuText}>Termos de uso e privacidade</Text>
+                <Text style={stylesMenu.menuText}>Reportar Bugs</Text>
+                <TouchableOpacity style={stylesMenu.menuOption} onPress={() => navigation.navigate('Sobre')}>
+                <Text style={stylesMenu.menuText}>Sobre o Aplicativo</Text>
                 </TouchableOpacity>
             </View>
             

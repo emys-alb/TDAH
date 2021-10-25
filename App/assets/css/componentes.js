@@ -9,7 +9,8 @@ const stylesComponentes = StyleSheet.create({
         lineHeight: hp('5%'),
         paddingBottom: hp('2%'),
         paddingTop: hp('3%'),
-        justifyContent: "center"
+        justifyContent: "center",
+        fontFamily: 'Space'
     },
 
     textContainerTarefa: {
@@ -23,17 +24,20 @@ const stylesComponentes = StyleSheet.create({
         paddingLeft: wp('5%'),
         paddingRight: wp('5%'),
         paddingBottom: hp('3%'),
+        fontFamily: 'Space'
     },
 
     textTarefa: {
         color: "#FFF",
         fontSize: hp('3%'),
         marginTop:hp('2%'),
+        fontFamily: 'Space'
     },
 
     titleAvaliacao: {
         textAlign:"center",
         fontWeight: "700",
+        fontFamily: 'Space',
         fontSize: hp('4%'),
         color: "#FFFFFF",
         paddingBottom: 30,
@@ -47,6 +51,7 @@ const stylesComponentes = StyleSheet.create({
         fontWeight: "bold",
         fontSize: hp('7%'),
         color: "#FFFFFF",
+        fontFamily: "Space"
     },
 
     progressBarContainer: {
@@ -72,6 +77,7 @@ const stylesComponentes = StyleSheet.create({
         borderWidth: 1,
         backgroundColor: "#FFFFFF",
         marginBottom:hp('7%'),
+        fontFamily: "Space"
     },
 
     titleParabens: {
@@ -81,6 +87,7 @@ const stylesComponentes = StyleSheet.create({
         color: "#FFFFFF",
         paddingTop: hp('3%'),
         paddingBottom: hp('6%'),
+        fontFamily: "Space"
     },
     iconePergunta: {
         alignSelf: "flex-start",
@@ -134,6 +141,7 @@ const stylesComponentes = StyleSheet.create({
         height: hp('10%'),
         marginTop:hp("1%"),
         alignSelf:"center",
+        fontFamily: 'Space'
     },
     taskImageListing:{
         width:wp("15%"),
@@ -147,12 +155,14 @@ const stylesComponentes = StyleSheet.create({
         fontSize: hp('3.6%'),
         color: "#FF7C48",
         justifyContent:"flex-start",
+        fontFamily: 'Space'
     },
     taskTimeListing:{
         color: "#FFFFFF",
         fontSize:hp("3%"),
         alignSelf:"flex-start",
         marginLeft:wp("3%"),
+        fontFamily: 'Space'
     },
     buttonListingTask:{
         alignSelf: "center",
