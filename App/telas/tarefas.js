@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { View, TouchableOpacity, Text } from 'react-native';
 
 // Layout
-import styles from '../assets/css/telas';
+import stylesTarefas from '../assets/css/telas/tarefas';
 import Tarefa from '../componentes/Tarefa';
 import BarraDeProgresso from '../componentes/ProgressBar';
 //import tarefasData from '../services/sqlite/tarefasData';
@@ -55,7 +55,7 @@ const Tarefas = ({ navigation }) => {
   // var cont = contador.getContagem();
 
   return (
-    <View style={styles.container}>
+    <View style={stylesTarefas.container}>
       <BarraDeProgresso value={value} />
       <Header titulo={tarefasLista[counter].titulo} navigator={navigation}/>
       <View>
@@ -67,13 +67,13 @@ const Tarefas = ({ navigation }) => {
             image={tarefasLista[counter].imagem} />
         </View>
 
-        <View style={styles.buttons}>
+        <View style={stylesTarefas.buttons}>
           <TouchableOpacity
-            style={styles.botaoVermelhoTelaTarefa}
+            style={stylesTarefas.botaoVermelhoTelaTarefa}
             onPress={() => navigation.navigate('Tarefa nao realizada')}>
-            <Text style={styles.textButtonTarefa}>Não Realizada</Text>
+            <Text style={stylesTarefas.textButtonTarefa}>Não Realizada</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.botaoVerdeTelaTarefa} onPress={() => {
+          <TouchableOpacity style={stylesTarefas.botaoVerdeTelaTarefa} onPress={() => {
             if (counter === 9) {
               setValue(0)
               navigation.navigate('Missoes Finalizadas');
@@ -83,7 +83,7 @@ const Tarefas = ({ navigation }) => {
               atualizaMissao();
             }
           }}>
-            <Text style={styles.textButtonTarefa}>Realizada</Text>
+            <Text style={stylesTarefas.textButtonTarefa}>Realizada</Text>
           </TouchableOpacity>
         </View>
       </View>

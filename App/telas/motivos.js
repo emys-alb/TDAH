@@ -2,7 +2,7 @@ import React,{useState} from 'react';
 
 // Layout
 import { View, Text, TouchableOpacity } from 'react-native';
-import styles from '../assets/css/telas';
+import stylesMotivos from '../assets/css/telas/motivos';
 import Entradadetexto from "../componentes/Entradadetexto";
 import Avaliacao from '../componentes/Avaliacao';
 
@@ -17,22 +17,22 @@ const motivos = ({ navigation }) => {
     const dispatch = useDispatch();
     const counter = useSelector(store => store.counter);
     return (
-        <View style={styles.container}>
+        <View style={stylesMotivos.container}>
             <View style={{ alignItems: "center" }}>
-                <View style={styles.buttonsContainerArea}>
+                <View style={stylesMotivos.buttonsContainerArea}>
                     <Avaliacao title="Por que você vai pular essa missão?" />
 
 
-                    <TouchableOpacity style={styles.buttonMotivosScreen} onPress={() => {
+                    <TouchableOpacity style={stylesMotivos.buttonMotivosScreen} onPress={() => {
                         dispatch(actions.increment());
                        // dispatch(skipActions.skipincrement());
                         navigation.navigate('Tarefas do Dia');
                     }}>
-                        <Text style={styles.textButton}>Falta de ajuda</Text>
+                        <Text style={stylesMotivos.textButton}>Falta de ajuda</Text>
                     </TouchableOpacity>
 
 
-                    <TouchableOpacity style={styles.buttonMotivosScreen} onPress={() => {
+                    <TouchableOpacity style={stylesMotivos.buttonMotivosScreen} onPress={() => {
                          if (counter === 9) {
                             setValue(0)
                             navigation.navigate('Missoes Finalizadas');
@@ -43,11 +43,11 @@ const motivos = ({ navigation }) => {
                           }
                     }
                     }>
-                        <Text style={styles.textButton}>Não gosto dessa missão</Text>
+                        <Text style={stylesMotivos.textButton}>Não gosto dessa missão</Text>
                     </TouchableOpacity>
 
 
-                    <TouchableOpacity style={styles.buttonMotivosScreen} onPress={() => {
+                    <TouchableOpacity style={stylesMotivos.buttonMotivosScreen} onPress={() => {
                          if (counter === 9) {
                             setValue(0)
                             navigation.navigate('Missoes Finalizadas');
@@ -57,18 +57,18 @@ const motivos = ({ navigation }) => {
                         navigation.navigate('Tarefas do Dia');
                     }}
                     }>
-                        <Text style={styles.textButton}>Muito Difícil</Text>
+                        <Text style={stylesMotivos.textButton}>Muito Difícil</Text>
                     </TouchableOpacity>
 
 
-                    <TouchableOpacity style={styles.buttonMotivosScreen} onPress={() =>
+                    <TouchableOpacity style={stylesMotivos.buttonMotivosScreen} onPress={() =>
                     {
                        // dispatch(skipActions.skipincrement());
                         navigation.navigate('motivo');
                     }
                         
                     }>
-                        <Text style={styles.textButton}>Escrever Motivo</Text>
+                        <Text style={stylesMotivos.textButton}>Escrever Motivo</Text>
                     </TouchableOpacity>
                 </View>
             </View>
