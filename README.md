@@ -24,7 +24,7 @@ Abra [a base espacial no navegador](http://127.0.0.1:8082). Para gerar a versão
 
 - Luma e Pip acompanham a rotina. Cada missão concluída vale cinco estrelas. Os emblemas são liberados com 5, 15, 30 e 50 estrelas.
 - A criança pode pedir ajuda, adiar uma atividade e retomá-la no mapa de missões. Registrar como se sentiu é opcional.
-- O hangar abre depois que todas as missões do dia forem concluídas ou deixadas para depois. O jogo tem seis trechos, moedas, asteroides e novas rotas a cada voo.
+- O hangar abre depois que todas as missões do dia forem concluídas ou deixadas para depois. No hangar, a criança escolhe entre a Memória cósmica (quatro ou seis pares), o Jogo da velha contra Pip (amigável ou desafio) e a Rota dos asteroides (seis trechos com moedas). Os três jogos funcionam no aparelho.
 - O diário guarda o humor e uma anotação por dia. Na área dos responsáveis é possível criar, editar ou pausar missões, consultar o histórico e reduzir as animações.
 - O progresso fica no aparelho, em SQLite no aplicativo nativo e no armazenamento local do navegador na versão web. A rotina começa de novo a cada dia e as estrelas conquistadas se acumulam.
 

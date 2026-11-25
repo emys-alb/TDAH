@@ -51,12 +51,12 @@ export function CartaoJogo({ estado, data, ir }) {
   const recorde = diaDe(estado, data).recorde;
   return <View style={[caixa, { backgroundColor: '#EAE5F9', borderColor: '#DBD2F1', marginTop: 14, overflow: 'hidden' }]}>
     <View style={linha}><View style={{ flex: 1, marginRight: 8 }}>
-      <T forte size={20} accessibilityRole="header">Rota dos asteroides</T>
-      <T color={cor.fraca} size={15} style={{ marginTop: 3 }}>{jogo ? 'Pilote a nave e colete moedas pelo espaço.' : 'Visite todas as missões de hoje para liberar o jogo.'}</T></View>
+      <T forte size={20} accessibilityRole="header">Hangar de jogos</T>
+      <T color={cor.fraca} size={15} style={{ marginTop: 3 }}>{jogo ? 'Memória, jogo da velha e asteroides esperam por você.' : 'Visite todas as missões de hoje para liberar os três jogos.'}</T></View>
       <Figura nome="foguete" size={55} /></View>
-    {jogo ? <Botao titulo="Jogar agora" tipo="suave" icone="play" onPress={() => ir('Jogo')} style={{ marginTop: 12, alignSelf: 'flex-start', backgroundColor: '#FFF' }} /> :
-      <View style={[linha, { marginTop: 11 }]}><Icone nome="lock" size={14} /><T forte size={13} color={cor.roxo} style={{ marginLeft: 6 }}>Hangar fechado</T></View>}
-    {recorde != null && <T size={14} color={cor.roxo} style={{ marginTop: 6 }}>Recorde de hoje · {recorde} de 6 moedas</T>}
+    <Botao titulo={jogo ? 'Escolher jogo' : 'Conhecer os jogos'} tipo="suave" icone="play" onPress={() => ir('Jogo')} style={{ marginTop: 12, alignSelf: 'flex-start', backgroundColor: '#FFF' }} />
+    {!jogo && <View style={[linha, { marginTop: 11 }]}><Icone nome="lock" size={14} /><T forte size={13} color={cor.roxo} style={{ marginLeft: 6 }}>Hangar fechado</T></View>}
+    {recorde != null && <T size={14} color={cor.roxo} style={{ marginTop: 6 }}>Asteroides · {recorde} de 6 moedas</T>}
   </View>;
 }
 export default function Base({ estado, data, ir, largura }) {
@@ -64,7 +64,7 @@ export default function Base({ estado, data, ir, largura }) {
   const p = contagem(estado, data);
   const dia = diaDe(estado, data);
   const larga = largura >= 790;
-  const cta = seguinte ? (p.visitadas ? 'Continuar missões' : 'Começar missão') : p.jogo ? 'Pilotar a nave' : 'Ver missões';
+  const cta = seguinte ? (p.visitadas ? 'Continuar missões' : 'Começar missão') : p.jogo ? 'Escolher um jogo' : 'Ver missões';
   const decolar = () => seguinte ? ir('Missão', seguinte.id) : ir(p.jogo ? 'Jogo' : 'Missões');
   return <View>
     <Ceu compacto={largura < 640} largura={largura} tituloBotao={cta} acao={decolar} />

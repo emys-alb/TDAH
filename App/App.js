@@ -3,7 +3,7 @@ import { ActivityIndicator, SafeAreaView, ScrollView, StatusBar, useWindowDimens
 import Base, { CartaoJogo, Lista } from './aventura/Base';
 import Colecao from './aventura/Colecao';
 import Diario from './aventura/Diario';
-import Jogo from './aventura/Jogo';
+import Hangar from './aventura/Hangar';
 import Missao from './aventura/Missao';
 import Responsaveis from './aventura/Responsaveis';
 import { Alvo, Figura, Icone, T, Titulo, cor, entre, linha, useMovimento } from './aventura/interface';
@@ -69,7 +69,7 @@ function Viagem({ estado, data, agir, erro, largura }) {
     case 'Diário': pagina = <Diario {...props} inicial={id} />; break;
     case 'Coleção': pagina = <Colecao {...props} />; break;
     case 'Responsáveis': pagina = <Responsaveis {...props} />; break;
-    case 'Jogo': pagina = <Jogo {...props} />; break;
+    case 'Jogo': pagina = <Hangar id={id} {...props} />; break;
     default: pagina = <Missao {...props} tela={tela} tarefa={estado.rotina.find(t => t.id === id)} />;
   }
   const secundaria = telasMissao.includes(tela) || tela === 'Jogo' || tela === 'Responsáveis';

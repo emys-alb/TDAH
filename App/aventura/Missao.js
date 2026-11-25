@@ -30,8 +30,8 @@ export default function Missao({ tela, tarefa, estado, data, agir, ir, animar })
       <Flutuar animar={animar}><Figura nome="medalha" size={88} /></Flutuar>
       <T forte size={31} style={{ marginTop: 9 }}>Brilhou, tripulante!</T>
       <T size={18} color={cor.roxo}>+{ESTRELAS} estrelas na coleção</T></View>
-      <Fala animar={animar}>{p.jogo ? 'O hangar está aberto! Sua nave já pode explorar o cinturão de asteroides.' : 'Mais um passo no seu plano de voo. A próxima missão espera por você.'}</Fala>
-      <Botao titulo={proximidade ? 'Próxima missão' : 'Ir para o jogo'} icone="arrow-right" onPress={seguir} />
+      <Fala animar={animar}>{p.jogo ? 'O hangar está aberto! Escolha um dos três jogos da tripulação.' : 'Mais um passo no seu plano de voo. A próxima missão espera por você.'}</Fala>
+      <Botao titulo={proximidade ? 'Próxima missão' : 'Escolher um jogo'} icone="arrow-right" onPress={seguir} />
       <Botao tipo="contorno" titulo="Voltar à base" style={espaco} onPress={() => ir('Base', undefined, true)} />
     </Painel>;
   }
