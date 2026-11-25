@@ -2,7 +2,7 @@ import React,{useState} from 'react';
 
 // Layout
 import { View, Text, TouchableOpacity } from 'react-native';
-import styles from '../assets/css/telas';
+import stylesMotivotarefanaorealizada from '../assets/css/telas/motivotarefanaorealizada';
 import Entradadetexto from "../componentes/Entradadetexto";
 import Avaliacao from '../componentes/Avaliacao';
 
@@ -16,13 +16,13 @@ const motivotarefanaorealizada = ({ navigation }) => {
     const dispatch = useDispatch();
     const counter = useSelector(store => store.counter);
     return (
-        <View style={styles.container}>
+        <View style={stylesMotivotarefanaorealizada.container}>
             <View style={{ alignItems: "center" }}>
-                <View style={styles.buttonsContainerArea}>
+                <View style={stylesMotivotarefanaorealizada.buttonsContainerArea}>
                     <Avaliacao title="Por que você não concluiu a tarefa?" />
                     <Entradadetexto />
                     <TouchableOpacity
-                        style={styles.botaoTelaMotivo}
+                        style={stylesMotivotarefanaorealizada.botaoTelaMotivo}
                         onPress={() => {
                            if (counter === 9) {
                             setValue(0)
@@ -32,7 +32,7 @@ const motivotarefanaorealizada = ({ navigation }) => {
                             navigation.navigate('Tarefas do Dia');
                           }
                         }}>
-                        <Text style={styles.textButton}>Enviar</Text>
+                        <Text style={stylesMotivotarefanaorealizada.textButton}>Enviar</Text>
                     </TouchableOpacity>
                 </View>
             </View>

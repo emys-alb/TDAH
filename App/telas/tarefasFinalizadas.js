@@ -1,7 +1,7 @@
 import React from 'react';
 import { Image, Text, TouchableOpacity, View } from 'react-native';
 
-import styles from '../assets/css/telas';
+import stylesTarefasFinalizadas from '../assets/css/telas/tarefasFinalizadas';
 
 //Redux
 import { useSelector, useDispatch } from 'react-redux';
@@ -24,27 +24,27 @@ const tarefasFinalizadas = ({ navigation }) => {
     }
 
     return (
-        <View style={styles.container}>
-            <View style={styles.circuloAstroParabens}>
-                <Image resizeMode="contain" style={styles.astroAjuda} source={require('../assets/img/astronaut-pescando.png')} />
+        <View style={stylesTarefasFinalizadas.container}>
+            <View style={stylesTarefasFinalizadas.circuloAstroParabens}>
+                <Image resizeMode="contain" style={stylesTarefasFinalizadas.astroAjuda} source={require('../assets/img/astronaut-pescando.png')} />
             </View>
-            <Text style={styles.textSobre}>Parabéns por ter concluído todas as tarefas</Text>
-            <View style={styles.icones}>
+            <Text style={stylesTarefasFinalizadas.textSobre}>Parabéns por ter concluído todas as tarefas</Text>
+            <View style={stylesTarefasFinalizadas.icones}>
                 <View>
-                    <Image resizeMode="contain" style={styles.icone} source={require('../assets/img/medalha.png')} />
-                    <Text style={styles.textButton}>
+                    <Image resizeMode="contain" style={stylesTarefasFinalizadas.icone} source={require('../assets/img/medalha.png')} />
+                    <Text style={stylesTarefasFinalizadas.textButton}>
                         Nível {nivel}</Text>
                 </View>
                 <View>
-                    <Image resizeMode="contain" style={styles.icone} source={require('../assets/img/completed-task.png')} />
-                    <Text style={styles.textButton}>9/{counter + 1}</Text>
+                    <Image resizeMode="contain" style={stylesTarefasFinalizadas.icone} source={require('../assets/img/completed-task.png')} />
+                    <Text style={stylesTarefasFinalizadas.textButton}>9/{counter + 1}</Text>
                 </View>
             </View>
-            <TouchableOpacity style={styles.botaoVerdeFinalizadas} onPress={() =>{
+            <TouchableOpacity style={stylesTarefasFinalizadas.botaoVerdeFinalizadas} onPress={() =>{
                  navigation.navigate('Iniciar');
                  dispatch(actions.reset());
                 }}>
-                <Text style={styles.textButtonTarefa}>Curtir Games</Text>
+                <Text style={stylesTarefasFinalizadas.textButtonTarefa}>Curtir Games</Text>
             </TouchableOpacity>
         </View>
     )

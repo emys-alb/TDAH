@@ -1,13 +1,13 @@
 import React from "react";
 import { Text, View } from "react-native";
 
-import stylesComponentes from '../assets/css/componentes'
+import stylesAvaliacao from '../assets/css/componentes/Avaliacao';
 
 const Avaliacao = (props) => {
     return(
         <View>
-        <Text style={stylesComponentes.titleAvaliacao}> {props.title} </Text>
-        <View style={stylesComponentes.buttonsContainerArea}>
+        <Text style={stylesAvaliacao.titleAvaliacao}> {props.title} </Text>
+        <View style={stylesAvaliacao.buttonsContainerArea}>
         </View>
        </View>
     )
