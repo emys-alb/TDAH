@@ -11,6 +11,7 @@ const motivos = ['Preciso de mais tempo', 'Quero companhia', 'Outro motivo'];
 export default function Missao({ tela, tarefa, estado, data, agir, ir, animar }) {
   const [motivo, setMotivo] = useState('');
   const [texto, setTexto] = useState('');
+  const [pausa, setPausa] = useState('');
   if (!tarefa || !tarefa.ativa) return <Painel><Titulo>Missão em descanso</Titulo><Botao titulo="Ver missões" onPress={() => ir('Missões')} /></Painel>;
   const dia = diaDe(estado, data);
   const r = dia.resultados[tarefa.id];
@@ -35,6 +36,17 @@ export default function Missao({ tela, tarefa, estado, data, agir, ir, animar })
       <Botao tipo="contorno" titulo="Voltar à base" style={espaco} onPress={() => ir('Base', undefined, true)} />
     </Painel>;
   }
+  if (tela === 'Pausa' && r?.status !== 'feita') {
+    return <Painel><Titulo sub={tarefa.titulo}>Pausa da tripulação</Titulo>
+      {pausa ? <View style={{ backgroundColor: '#EAF7F1', borderRadius: 16, padding: 18, marginBottom: 14 }}>
+        <T forte size={20}>{pausa === 'mover' ? 'Movimento do seu jeito' : 'Um momento tranquilo'}</T>
+        <T style={{ marginTop: 8 }}>{pausa === 'mover' ? 'Deixe a tela de lado. Se for confortável, mova os braços sentado ou dê alguns passos em um lugar livre.' : 'Descanse numa posição confortável. Você pode olhar para longe da tela ou chamar alguém para ficar com você.'}</T>
+      </View> : <><T>Do que você precisa agora?</T>
+        <Botao titulo="Quero me movimentar" icone="activity" style={espaco} onPress={() => setPausa('mover')} />
+        <Botao titulo="Quero descansar" tipo="suave" style={espaco} onPress={() => setPausa('descansar')} /></>}
+      <Botao titulo="Retomar minha missão" icone="arrow-right" tipo="contorno" style={espaco} onPress={() => ir('Missão', tarefa.id, true)} />
+    </Painel>;
+  }
   if (tela === 'Ajuda' && r?.status !== 'feita') {
     return <Painel><Titulo sub={tarefa.titulo}>Precisamos de reforços?</Titulo>
       <Fala animar={animar}>Chame alguém de confiança por perto. Vocês podem ler a missão juntos e começar pelo primeiro passo.</Fala>
@@ -54,7 +66,7 @@ export default function Missao({ tela, tarefa, estado, data, agir, ir, animar })
       }} />
     </Painel>;
   }
-  const pos = missoesAtivas(estado).findIndex(t => t.id === tarefa.id) + 1;
+  const pos = missoesAtivas(estado, data).findIndex(t => t.id === tarefa.id) + 1;
   const sentimento = SENTIMENTOS.find(s => s.id === r?.humor);
   return <Painel><View style={[linha, { justifyContent: 'space-between' }]}>
     <T forte size={14} color={cor.roxo}>Missão {pos} de {p.total}</T>
@@ -66,6 +78,7 @@ export default function Missao({ tela, tarefa, estado, data, agir, ir, animar })
       <Botao titulo="Ver missões" onPress={() => ir('Missões', undefined, true)} /></> :
       <>{r?.status === 'pulada' && <Fala animar={animar}>Você guardou esta missão para depois. Podemos tentar agora!</Fala>}
         <Botao titulo="Concluí a missão" icone="check-circle" onPress={() => { agir({ tipo: 'concluir', id: tarefa.id }); ir('Avaliação', tarefa.id, true); }} />
+        <Botao titulo="Preciso de uma pausa" icone="pause-circle" tipo="suave" style={espaco} onPress={() => ir('Pausa', tarefa.id, true)} />
         <Botao titulo="Preciso de ajuda" icone="life-buoy" tipo="contorno" style={espaco} onPress={() => ir('Ajuda', tarefa.id)} /></>}
   </Painel>;
 }

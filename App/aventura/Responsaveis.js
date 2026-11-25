@@ -4,7 +4,7 @@ import { Alvo, Botao, Figura, Icone, T, Titulo, caixa, campo, cor, entre, linha 
 import { SENTIMENTOS, nomeDoDia } from './modelo';
 const espaco = { marginTop: 14 };
 function Etiqueta({ children }) { return <T forte size={15} style={{ marginTop: 11, marginBottom: 5 }}>{children}</T>; }
-function Editor({ item, concluir, cancelar }) {
+export function Editor({ item, concluir, cancelar }) {
   const [titulo, setTitulo] = useState(item.titulo);
   const [horario, setHorario] = useState(item.horario);
   const [descricao, setDescricao] = useState(item.descricao);
@@ -39,7 +39,7 @@ function Registros({ dias }) {
     })}
   </View>;
 }
-export default function Responsaveis({ estado, agir }) {
+export default function Responsaveis({ estado, agir, ir }) {
   const [item, setItem] = useState(null);
   const [mensagem, setMensagem] = useState('');
   const tarefas = [...estado.rotina].sort((a, b) => a.horario.localeCompare(b.horario));
@@ -50,6 +50,7 @@ export default function Responsaveis({ estado, agir }) {
       <T forte size={18}>Reduzir animações</T><T size={14} color={cor.fraca}>A preferência do aparelho também é respeitada.</T></View>
       <Switch accessibilityLabel="Reduzir animações" value={estado.movimentoReduzido} onValueChange={valor => agir({ tipo: 'movimento', valor })} />
     </View>
+    <Botao titulo="Planejar por data" icone="calendar" tipo="suave" style={espaco} onPress={() => ir('Planejar')} />
     {item ? <Editor key={item.id || 'nova'} item={item} cancelar={() => { setItem(null); }} concluir={editada => {
       agir({ tipo: 'rotina', item: { ...editada, id: editada.id || 'm-' + Date.now().toString(36) + Math.random().toString(36).slice(2, 7) } });
       setItem(null); setMensagem('Rotina atualizada.');

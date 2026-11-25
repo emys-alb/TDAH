@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { ActivityIndicator, SafeAreaView, ScrollView, StatusBar, useWindowDimensions, View } from 'react-native';
 import Base, { CartaoJogo, Lista } from './aventura/Base';
+import Calendario from './aventura/Calendario';
 import Colecao from './aventura/Colecao';
 import Diario from './aventura/Diario';
 import Hangar from './aventura/Hangar';
@@ -8,15 +9,15 @@ import Missao from './aventura/Missao';
 import Responsaveis from './aventura/Responsaveis';
 import { Alvo, Figura, Icone, T, Titulo, cor, entre, linha, useMovimento } from './aventura/interface';
 import { carregarFontes } from './aventura/fontes';
-import { totalEstrelas } from './aventura/modelo';
+import { missoesAtivas, totalEstrelas } from './aventura/modelo';
 import useNavegacao from './aventura/navegacao';
 import useExpedicao from './aventura/useExpedicao';
 
 const abas = [
   { tela: 'Base', icone: 'home' }, { tela: 'Missões', icone: 'compass' },
-  { tela: 'Diário', icone: 'book-open' }, { tela: 'Coleção', icone: 'award' },
+  { tela: 'Calendário', icone: 'calendar' }, { tela: 'Diário', icone: 'book-open' }, { tela: 'Coleção', icone: 'award' },
 ];
-const telasMissao = ['Missão', 'Ajuda', 'Adiar', 'Avaliação', 'Conquista'];
+const telasMissao = ['Missão', 'Ajuda', 'Adiar', 'Pausa', 'Avaliação', 'Conquista'];
 const moldura = { width: '100%', maxWidth: 1130, alignSelf: 'center' };
 function Abas({ selecionada, ir, compacta }) {
   return <View style={[linha, compacta ? { width: '100%', justifyContent: 'space-around' } : {}]}>
@@ -56,7 +57,7 @@ function Cabecalho({ larga, ir, selecionada, estrelas }) {
 function Viagem({ estado, data, agir, erro, largura }) {
   const { rota, ir, voltar } = useNavegacao();
   const { tela, id } = rota;
-  const larga = largura >= 870;
+  const larga = largura >= 975;
   const animar = useMovimento(estado.movimentoReduzido);
   const selecionada = telasMissao.includes(tela) ? 'Missões' : tela;
   const props = { estado, data, agir, ir, animar, largura };
@@ -66,13 +67,15 @@ function Viagem({ estado, data, agir, erro, largura }) {
     case 'Missões': pagina = <View style={{ maxWidth: 800, width: '100%', alignSelf: 'center' }}>
       <Titulo sub="Escolha uma missão para começar ou retome uma que ficou para depois.">Mapa de missões</Titulo>
       <Lista {...props} /><CartaoJogo {...props} /></View>; break;
+    case 'Planejar':
+    case 'Calendário': pagina = <Calendario {...props} inicial={id} planejamento={tela === 'Planejar'} />; break;
     case 'Diário': pagina = <Diario {...props} inicial={id} />; break;
     case 'Coleção': pagina = <Colecao {...props} />; break;
     case 'Responsáveis': pagina = <Responsaveis {...props} />; break;
     case 'Jogo': pagina = <Hangar id={id} {...props} />; break;
-    default: pagina = <Missao {...props} tela={tela} tarefa={estado.rotina.find(t => t.id === id)} />;
+    default: pagina = <Missao {...props} tela={tela} tarefa={missoesAtivas(estado, data).find(t => t.id === id)} />;
   }
-  const secundaria = telasMissao.includes(tela) || tela === 'Jogo' || tela === 'Responsáveis';
+  const secundaria = telasMissao.includes(tela) || tela === 'Jogo' || tela === 'Planejar' || tela === 'Responsáveis';
   return <>
     <Cabecalho larga={larga} ir={ir} selecionada={selecionada} estrelas={totalEstrelas(estado)} />
     <ScrollView key={tela + '-' + (id || '')} style={{ flex: 1 }} keyboardShouldPersistTaps="handled"

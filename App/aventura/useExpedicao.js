@@ -46,5 +46,8 @@ export default function useExpedicao() {
         .then(() => setErro(''), () => setErro('Não foi possível salvar no aparelho. A próxima alteração tentará de novo.'));
     }
   }, [data]);
+  useEffect(() => {
+    if (estado && !estado.versoesRotina) agir({ tipo: 'iniciarAgenda' });
+  }, [estado, agir]);
   return { estado, data, agir, erro };
 }

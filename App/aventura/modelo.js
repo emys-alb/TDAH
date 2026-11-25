@@ -1,5 +1,7 @@
 const semente = require('../bd/nomeDaCrianca.json');
 
+const { planoDoDia } = require('./agenda');
+
 const ESTRELAS = 5;
 const SENTIMENTOS = [
   { id: 'feliz', nome: 'Feliz' },
@@ -35,11 +37,11 @@ function estadoInicial() {
 function diaDe(estado, data) {
   return estado.dias[data] || { resultados: {}, diario: null, vooLiberado: false, recorde: null };
 }
-function missoesAtivas(estado) {
-  return estado.rotina.filter(t => t.ativa).sort((a, b) => a.horario.localeCompare(b.horario));
+function missoesAtivas(estado, data) {
+  return planoDoDia(estado, data).filter(t => t.ativa);
 }
 function contagem(estado, data) {
-  const tarefas = missoesAtivas(estado);
+  const tarefas = missoesAtivas(estado, data);
   const dia = diaDe(estado, data);
   const feitas = tarefas.filter(t => dia.resultados[t.id]?.status === 'feita').length;
   const visitadas = tarefas.filter(t => dia.resultados[t.id]).length;
@@ -55,13 +57,26 @@ function registrarDia(estado, data, dia) {
   return novo;
 }
 function atualizar(estado, acao) {
+  if (acao.tipo === 'iniciarAgenda') {
+    return estado.versoesRotina ? estado : { ...estado, versoesRotina: { [acao.data]: estado.rotina } };
+  }
+  if (acao.tipo === 'agendar') {
+    const alvo = acao.diaAlvo;
+    if (!alvo || alvo < acao.data) return estado;
+    const diaAlvo = diaDe(estado, alvo);
+    if (diaAlvo.resultados[acao.item.id]) return estado;
+    const diaNovo = { ...diaAlvo, ajustes: { ...diaAlvo.ajustes, [acao.item.id]: acao.item } };
+    if (alvo === acao.data) return registrarDia(estado, alvo, diaNovo);
+    return { ...estado, dias: { ...estado.dias, [alvo]: diaNovo } };
+  }
   if (acao.tipo === 'movimento') return { ...estado, movimentoReduzido: acao.valor };
   const dia = diaDe(estado, acao.data);
   if (acao.tipo === 'rotina') {
     const item = acao.item;
     const existe = estado.rotina.some(t => t.id === item.id);
     const rotina = existe ? estado.rotina.map(t => t.id === item.id ? item : t) : [...estado.rotina, item];
-    return registrarDia({ ...estado, rotina }, acao.data, dia);
+    const versoesRotina = { ...estado.versoesRotina, [acao.data]: rotina };
+    return registrarDia({ ...estado, rotina, versoesRotina }, acao.data, dia);
   }
   if (acao.tipo === 'diario') {
     return registrarDia(estado, acao.data, { ...dia, diario: { humor: acao.humor, nota: acao.nota.trim() } });
@@ -70,7 +85,7 @@ function atualizar(estado, acao) {
     if (!contagem(estado, acao.data).jogo) return estado;
     return registrarDia(estado, acao.data, { ...dia, recorde: Math.max(dia.recorde || 0, acao.pontos) });
   }
-  const tarefa = estado.rotina.find(t => t.id === acao.id && t.ativa);
+  const tarefa = missoesAtivas(estado, acao.data).find(t => t.id === acao.id);
   if (!tarefa) return estado;
   const anterior = dia.resultados[tarefa.id];
   let resultado;
@@ -87,7 +102,7 @@ function atualizar(estado, acao) {
 }
 function proxima(estado, data) {
   const dia = diaDe(estado, data);
-  return missoesAtivas(estado).find(t => !dia.resultados[t.id]);
+  return missoesAtivas(estado, data).find(t => !dia.resultados[t.id]);
 }
 function novaRota(sorteio = Math.random) {
   const rota = [];

@@ -25,7 +25,7 @@ function Ceu({ compacto, largura, acao, tituloBotao }) {
   </View>;
 }
 export function Lista({ estado, data, ir, limite }) {
-  const tarefas = missoesAtivas(estado);
+  const tarefas = missoesAtivas(estado, data);
   const dia = diaDe(estado, data);
   const pendentes = tarefas.filter(t => !dia.resultados[t.id]);
   const lista = limite ? (pendentes.length ? pendentes : tarefas).slice(0, limite) : tarefas;

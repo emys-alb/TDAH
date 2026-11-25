@@ -28,6 +28,11 @@ Abra [a base espacial no navegador](http://127.0.0.1:8082). Para gerar a versão
 - O diário guarda o humor e uma anotação por dia. Na área dos responsáveis é possível criar, editar ou pausar missões, consultar o histórico e reduzir as animações.
 - O progresso fica no aparelho, em SQLite no aplicativo nativo e no armazenamento local do navegador na versão web. A rotina começa de novo a cada dia e as estrelas conquistadas se acumulam.
 
+## Calendário e pausas
+Na aba **Calendário**, os números em cada dia mostram as missões concluídas e previstas. Em **Responsáveis → Planejar por data**, escolha um dia para cadastrar uma missão ou ajustar o horário de uma atividade só naquela data. A rotina diária continua sendo a base para os outros dias. Para datas anteriores à primeira abertura do calendário, o aplicativo mostra os resultados que já estavam registrados.
+
+Durante uma missão, **Preciso de uma pausa** oferece movimento ou descanso. A criança pode deixar a tela e retomar a mesma atividade quando quiser.
+
 ## Quem está envolvido com o desenvolvimento
 O aplicativo foi desenvolvido em sua primeira versão por:
 
