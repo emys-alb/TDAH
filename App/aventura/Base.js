@@ -64,7 +64,7 @@ export default function Base({ estado, data, ir, largura }) {
   const p = contagem(estado, data);
   const dia = diaDe(estado, data);
   const larga = largura >= 790;
-  const cta = seguinte ? (p.visitadas ? 'Continuar missões' : 'Começar missão') : p.jogo ? 'Escolher um jogo' : 'Ver missões';
+  const cta = seguinte ? (dia.emCurso === seguinte.id ? 'Retomar missão' : p.visitadas ? 'Continuar missões' : 'Começar missão') : p.jogo ? 'Escolher um jogo' : 'Ver missões';
   const decolar = () => seguinte ? ir('Missão', seguinte.id) : ir(p.jogo ? 'Jogo' : 'Missões');
   return <View>
     <Ceu compacto={largura < 640} largura={largura} tituloBotao={cta} acao={decolar} />

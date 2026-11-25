@@ -4,7 +4,12 @@
         "titulo": "Escovar os dentes",
         "descricao": "Pegue sua escova e coloque um pouquinho de pasta. Escove os dentes de cima, de baixo e do fundo.",
         "horario": "8:10",
-        "imagem": "../assets/img/escovando-os-dentes.png"
+        "imagem": "../assets/img/escovando-os-dentes.png",
+        "passos": [
+            "Pegar a escova e a pasta",
+            "Colocar a pasta na escova",
+            "Escovar os dentes"
+        ]
     },
     {
         "id": 2,
@@ -25,7 +30,12 @@
         "titulo": "Ajudar em casa",
         "descricao": "Pergunte a alguém de casa qual pequena tarefa vocês podem fazer juntos.",
         "horario": "10:30",
-        "imagem": "../assets/img/lavando.png"
+        "imagem": "../assets/img/lavando.png",
+        "passos": [
+            "Escolher uma tarefa com alguém de casa",
+            "Separar o que vamos usar",
+            "Fazer a tarefa juntos"
+        ]
     },
     {
         "id": 5,
@@ -39,7 +49,12 @@
         "titulo": "Almoçar",
         "descricao": "Lave as mãos e venha para a mesa. Descubra as cores do seu prato.",
         "horario": "12:00",
-        "imagem": "../assets/img/comendo.png"
+        "imagem": "../assets/img/comendo.png",
+        "passos": [
+            "Lavar as mãos",
+            "Sentar à mesa",
+            "Almoçar com calma"
+        ]
     },
     {
         "id": 7,

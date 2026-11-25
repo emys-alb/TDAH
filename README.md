@@ -33,6 +33,14 @@ Na aba **Calendário**, os números em cada dia mostram as missões concluídas 
 
 Durante uma missão, **Preciso de uma pausa** oferece movimento ou descanso. A criança pode deixar a tela e retomar a mesma atividade quando quiser.
 
+### Missões em passos curtos
+
+Em **Responsáveis**, edite uma missão da rotina ou escolha **Planejar por data**. Escreva um passo por linha, na ordem em que ele deve aparecer. O botão **Usar exemplo da mochila** preenche o nome e três passos de exemplo. Missões com o campo vazio continuam com uma única confirmação.
+
+A criança vê um passo de cada vez. O aparelho guarda o ponto de retomada por missão e por dia, inclusive após fechar o aplicativo. Os passos de uma sequência já iniciada são preservados durante aquela execução. A conclusão do último passo concede as estrelas da missão.
+
+Ao retomar, a família pode anotar o que ajudou naquele momento ou preencher a anotação mais tarde em **Responsáveis → Histórico das missões**. Cada retomada guarda sua própria anotação e o passo em que ocorreu.
+
 ## Quem está envolvido com o desenvolvimento
 O aplicativo foi desenvolvido em sua primeira versão por:
 

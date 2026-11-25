@@ -2,6 +2,8 @@ const semente = require('../bd/nomeDaCrianca.json');
 
 const { planoDoDia } = require('./agenda');
 
+const { andamentoDaMissao, atualizarAndamento } = require('./passos');
+
 const ESTRELAS = 5;
 const SENTIMENTOS = [
   { id: 'feliz', nome: 'Feliz' },
@@ -29,7 +31,8 @@ function nomeDoDia(chave, semana = false) {
 function estadoInicial() {
   return {
     versao: 1, movimentoReduzido: false, dias: {},
-    rotina: semente.map(({ id, titulo, descricao, horario }) => ({
+    rotina: semente.map(({ id, titulo, descricao, horario, passos }) => ({
+      passos: passos || [],
       id: String(id), titulo, descricao, horario: horario.padStart(5, '0'), arte: String(id), ativa: true,
     })),
   };
@@ -69,6 +72,14 @@ function atualizar(estado, acao) {
     if (alvo === acao.data) return registrarDia(estado, alvo, diaNovo);
     return { ...estado, dias: { ...estado.dias, [alvo]: diaNovo } };
   }
+  if (acao.tipo === 'notaRetomada') {
+    const dia = estado.dias[acao.diaAlvo];
+    const a = dia?.andamentos?.[acao.id];
+    if (!a?.retomadas[acao.numero]) return estado;
+    const retomadas = a.retomadas.map((r, i) => i === acao.numero ? { ...r, nota: acao.nota.trim() } : r);
+    const atualizado = { ...dia, andamentos: { ...dia.andamentos, [acao.id]: { ...a, retomadas } } };
+    return { ...estado, dias: { ...estado.dias, [acao.diaAlvo]: atualizado } };
+  }
   if (acao.tipo === 'movimento') return { ...estado, movimentoReduzido: acao.valor };
   const dia = diaDe(estado, acao.data);
   if (acao.tipo === 'rotina') {
@@ -88,21 +99,33 @@ function atualizar(estado, acao) {
   const tarefa = missoesAtivas(estado, acao.data).find(t => t.id === acao.id);
   if (!tarefa) return estado;
   const anterior = dia.resultados[tarefa.id];
+  const andamento = andamentoDaMissao(dia, tarefa);
+  if (['pausar', 'retomar', 'passo'].includes(acao.tipo)) {
+    if (anterior?.status === 'feita') return estado;
+    let novo = atualizarAndamento(dia, tarefa, acao);
+    if (novo === dia) return estado;
+    const a = novo.andamentos[tarefa.id];
+    if (acao.tipo === 'passo' && a.indice === a.passos.length) {
+      novo = { ...novo, emCurso: null, resultados: { ...dia.resultados, [tarefa.id]: { titulo: tarefa.titulo, status: 'feita' } } };
+    }
+    return registrarDia(estado, acao.data, novo);
+  }
   let resultado;
   if (acao.tipo === 'avaliar' && anterior?.status === 'feita') {
     resultado = { ...anterior, humor: acao.humor };
-  } else if (acao.tipo === 'concluir' && anterior?.status !== 'feita') {
+  } else if (acao.tipo === 'concluir' && !andamento.passos.length && !andamento.pausado && anterior?.status !== 'feita') {
     resultado = { titulo: tarefa.titulo, status: 'feita' };
   } else if (acao.tipo === 'pular' && anterior?.status !== 'feita') {
     resultado = { titulo: tarefa.titulo, status: 'pulada', motivo: acao.motivo.trim() };
   } else {
     return estado;
   }
-  return registrarDia(estado, acao.data, { ...dia, resultados: { ...dia.resultados, [tarefa.id]: resultado } });
+  return registrarDia(estado, acao.data, { ...dia, emCurso: dia.emCurso === tarefa.id ? null : dia.emCurso, resultados: { ...dia.resultados, [tarefa.id]: resultado } });
 }
 function proxima(estado, data) {
   const dia = diaDe(estado, data);
-  return missoesAtivas(estado, data).find(t => !dia.resultados[t.id]);
+  const tarefas = missoesAtivas(estado, data);
+  return tarefas.find(t => t.id === dia.emCurso && dia.resultados[t.id]?.status !== 'feita') || tarefas.find(t => !dia.resultados[t.id]);
 }
 function novaRota(sorteio = Math.random) {
   const rota = [];

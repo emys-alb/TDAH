@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import { TextInput, View } from 'react-native';
-import { Botao, Carinhas, Fala, Figura, Flutuar, Icone, T, Titulo, caixa, campo, cor, linha } from './interface';
+import { Barra, Botao, Carinhas, Fala, Figura, Flutuar, Icone, T, Titulo, caixa, campo, cor, linha } from './interface';
 import { ESTRELAS, SENTIMENTOS, contagem, diaDe, missoesAtivas, proxima } from './modelo';
+
+import { andamentoDaMissao } from './passos';
+import { CampoDeNota } from './NotasDeRetomada';
 
 function Painel({ children }) {
   return <View style={[caixa, { maxWidth: 610, width: '100%', alignSelf: 'center', padding: 24 }]}>{children}</View>;
@@ -12,9 +15,15 @@ export default function Missao({ tela, tarefa, estado, data, agir, ir, animar })
   const [motivo, setMotivo] = useState('');
   const [texto, setTexto] = useState('');
   const [pausa, setPausa] = useState('');
+  const [anotar, setAnotar] = useState(false);
+  const [nota, setNota] = useState('');
+  const [orientacao, mostrarOrientacao] = useState(false);
   if (!tarefa || !tarefa.ativa) return <Painel><Titulo>Missão em descanso</Titulo><Botao titulo="Ver missões" onPress={() => ir('Missões')} /></Painel>;
   const dia = diaDe(estado, data);
   const r = dia.resultados[tarefa.id];
+  const andamento = andamentoDaMissao(dia, tarefa);
+  const { indice, passos } = andamento;
+  const passo = passos[indice];
   const proximidade = proxima(estado, data);
   const p = contagem(estado, data);
   const seguir = () => proximidade ? ir('Missão', proximidade.id, true) : ir(p.jogo ? 'Jogo' : 'Missões', undefined, true);
@@ -36,15 +45,21 @@ export default function Missao({ tela, tarefa, estado, data, agir, ir, animar })
       <Botao tipo="contorno" titulo="Voltar à base" style={espaco} onPress={() => ir('Base', undefined, true)} />
     </Painel>;
   }
-  if (tela === 'Pausa' && r?.status !== 'feita') {
+  if (andamento.pausado && r?.status !== 'feita') {
     return <Painel><Titulo sub={tarefa.titulo}>Pausa da tripulação</Titulo>
+      {!!passo && <T forte color={cor.roxo} style={{ marginBottom: 10 }}>Na volta · passo {indice + 1} de {passos.length} · {passo}</T>}
       {pausa ? <View style={{ backgroundColor: '#EAF7F1', borderRadius: 16, padding: 18, marginBottom: 14 }}>
         <T forte size={20}>{pausa === 'mover' ? 'Movimento do seu jeito' : 'Um momento tranquilo'}</T>
         <T style={{ marginTop: 8 }}>{pausa === 'mover' ? 'Deixe a tela de lado. Se for confortável, mova os braços sentado ou dê alguns passos em um lugar livre.' : 'Descanse numa posição confortável. Você pode olhar para longe da tela ou chamar alguém para ficar com você.'}</T>
       </View> : <><T>Do que você precisa agora?</T>
         <Botao titulo="Quero me movimentar" icone="activity" style={espaco} onPress={() => setPausa('mover')} />
         <Botao titulo="Quero descansar" tipo="suave" style={espaco} onPress={() => setPausa('descansar')} /></>}
-      <Botao titulo="Retomar minha missão" icone="arrow-right" tipo="contorno" style={espaco} onPress={() => ir('Missão', tarefa.id, true)} />
+      {anotar ? <CampoDeNota valor={nota} mudar={setNota} /> : <Botao titulo="Anotar o que ajudou (opcional)" tipo="contorno"
+        style={espaco} onPress={() => setAnotar(true)} />}
+      <Botao titulo="Retomar minha missão" icone="arrow-right" style={espaco} onPress={() => {
+        agir({ tipo: 'retomar', id: tarefa.id, nota });
+        setAnotar(false); setNota(''); setPausa(''); ir('Missão', tarefa.id, true);
+      }} />
     </Painel>;
   }
   if (tela === 'Ajuda' && r?.status !== 'feita') {
@@ -73,12 +88,23 @@ export default function Missao({ tela, tarefa, estado, data, agir, ir, animar })
     <View style={linha}><Icone nome="clock" size={15} color={cor.fraca} /><T size={15} color={cor.fraca} style={{ marginLeft: 5 }}>{tarefa.horario}</T></View></View>
     <View style={{ backgroundColor: '#F0ECFB', alignItems: 'center', paddingVertical: 20, borderRadius: 20, marginVertical: 17 }}>
       <Figura nome={tarefa.arte} size={87} /></View>
-    <Titulo sub={tarefa.descricao}>{tarefa.titulo}</Titulo>
+    <Titulo sub={passos.length ? undefined : tarefa.descricao}>{tarefa.titulo}</Titulo>
     {r?.status === 'feita' ? <><Fala animar={animar}>{'Missão concluída! Suas estrelas já estão na coleção.' + (sentimento ? ' Você marcou: ' + sentimento.nome + '.' : '')}</Fala>
       <Botao titulo="Ver missões" onPress={() => ir('Missões', undefined, true)} /></> :
       <>{r?.status === 'pulada' && <Fala animar={animar}>Você guardou esta missão para depois. Podemos tentar agora!</Fala>}
-        <Botao titulo="Concluí a missão" icone="check-circle" onPress={() => { agir({ tipo: 'concluir', id: tarefa.id }); ir('Avaliação', tarefa.id, true); }} />
-        <Botao titulo="Preciso de uma pausa" icone="pause-circle" tipo="suave" style={espaco} onPress={() => ir('Pausa', tarefa.id, true)} />
+        {!!passo && <View accessibilityLiveRegion="polite" style={{ backgroundColor: cor.lilas, borderRadius: 16, padding: 16, marginBottom: 12 }}>
+          <T forte size={15} color={cor.roxo}>Passo {indice + 1} de {passos.length}</T>
+          <T forte size={23} style={{ marginVertical: 8 }}>{passo}</T>
+          <Barra valor={indice} total={passos.length} />
+        </View>}
+        <Botao titulo={passo && indice < passos.length - 1 ? 'Fiz este passo' : 'Concluí a missão'} icone="check-circle" onPress={() => {
+          agir(passo ? { tipo: 'passo', indice, id: tarefa.id } : { tipo: 'concluir', id: tarefa.id });
+          if (!passo || indice === passos.length - 1) ir('Avaliação', tarefa.id, true);
+        }} />
+        <Botao titulo="Preciso de uma pausa" icone="pause-circle" tipo="suave" style={espaco} onPress={() => { agir({ tipo: 'pausar', id: tarefa.id }); ir('Pausa', tarefa.id, true); }} />
+        {!!passo && !!tarefa.descricao && <><Botao titulo={orientacao ? 'Ocultar orientação' : 'Ver orientação'} tipo="contorno"
+          style={espaco} onPress={() => mostrarOrientacao(!orientacao)} />
+          {orientacao && <T style={espaco}>{tarefa.descricao}</T>}</>}
         <Botao titulo="Preciso de ajuda" icone="life-buoy" tipo="contorno" style={espaco} onPress={() => ir('Ajuda', tarefa.id)} /></>}
   </Painel>;
 }
