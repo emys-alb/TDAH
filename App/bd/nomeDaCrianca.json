@@ -2,70 +2,85 @@
     {
         "id": 1,
         "titulo": "Escovar os dentes",
-        "descricao": "O mundo precisa ser salvo do exercito de cáries. Rápido, escove os dentes e não deixe que eles ganhem.",
+        "descricao": "Pegue sua escova e coloque um pouquinho de pasta. Escove os dentes de cima, de baixo e do fundo.",
         "horario": "8:10",
-        "imagem": "../assets/img/escovando-os-dentes.png"
+        "imagem": "../assets/img/escovando-os-dentes.png",
+        "passos": [
+            "Pegar a escova e a pasta",
+            "Colocar a pasta na escova",
+            "Escovar os dentes"
+        ]
     },
     {
         "id": 2,
         "titulo": "Tomar café da manhã",
-        "descricao": "Saco vazio não para em pé. \nEsta na hora de tomar café.",
+        "descricao": "Sente-se para o café. O que vai dar energia para a sua primeira aventura?",
         "horario": "8:30",
         "imagem": "../assets/img/cafe.png"
     },
     {
         "id": 3,
         "titulo": "Assistir TV",
-        "descricao": "Manhã boa é manhã tranquila. \nHora de assistir TV.",
+        "descricao": "Escolha com sua família o que assistir. Quando acabar, desligue a TV.",
         "horario": "10:00",
         "imagem": "../assets/img/relatorio-de-noticias.png"
     },
     {
         "id": 4,
-        "titulo": "Ajudar mamãe",
-        "descricao": "Nem só de descanso vive o homem. Hora de ajudar mamãe.",
+        "titulo": "Ajudar em casa",
+        "descricao": "Pergunte a alguém de casa qual pequena tarefa vocês podem fazer juntos.",
         "horario": "10:30",
-        "imagem": "../assets/img/lavando.png"
+        "imagem": "../assets/img/lavando.png",
+        "passos": [
+            "Escolher uma tarefa com alguém de casa",
+            "Separar o que vamos usar",
+            "Fazer a tarefa juntos"
+        ]
     },
     {
         "id": 5,
         "titulo": "Jogar",
-        "descricao": "Depois de muito trabalho, é hora de muita diversão",
+        "descricao": "Escolha um jogo e combine com um adulto a hora de guardar.",
         "horario": "11:00",
         "imagem": "../assets/img/game.png"
     },
     {
         "id": 6,
         "titulo": "Almoçar",
-        "descricao": "Que manhã cansativa, hora de repor as energias com aquele almoço.",
+        "descricao": "Lave as mãos e venha para a mesa. Descubra as cores do seu prato.",
         "horario": "12:00",
-        "imagem": "../assets/img/comendo.png"
+        "imagem": "../assets/img/comendo.png",
+        "passos": [
+            "Lavar as mãos",
+            "Sentar à mesa",
+            "Almoçar com calma"
+        ]
     },
     {
         "id": 7,
         "titulo": "Brincar com o gato",
-        "descricao": "Gabo está se sentindo só. Hora de brincar com ele.",
+        "descricao": "Pegue um brinquedo do gato e convide seu companheiro para brincar.",
         "horario": "14:00",
         "imagem": "../assets/img/cat.png"
     },
     {
         "id": 8,
-        "titulo": "Lanche",
-        "descricao": "old que sorvete superestimado",
+        "titulo": "Fazer um lanche",
+        "descricao": "Faça uma pausa e escolha seu lanche com alguém de casa.",
         "horario": "16:00",
         "imagem": "../assets/img/lanche.png"
     },
     {
         "id": 9,
         "titulo": "Brincar na rua",
-        "descricao": "A rua te espera, vai brincar!",
+        "descricao": "Combine com um adulto um lugar seguro e escolha uma brincadeira.",
         "horario": "17:00",
         "imagem": "../assets/img/slider.png"
     },
     {
         "id": 10,
         "titulo": "Assistir filmes",
-        "descricao": "Hora de aproveitar o fim do dia com aquele filminho",
+        "descricao": "Escolha um filme com a família e prepare um lugar aconchegante.",
         "horario": "19:00",
         "imagem": "../assets/img/computer.png"
     }

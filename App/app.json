@@ -1,9 +1,9 @@
 {
   "name": "App",
-  "displayName": "TDAH",
+  "displayName": "Tripulantes",
   
   "expo": {
-    "name": "TDAH",
+    "name": "Tripulantes da Aventura",
     "version": "1.0.0",
     "slug": "tripulante-da-aventura",
     "privacy": "public",
