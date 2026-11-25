@@ -3,9 +3,10 @@
   "scripts": {
     "android": "react-native run-android",
     "ios": "react-native run-ios",
-    "web": "expo start --web",
+    "web": "node scripts/web.cjs",
     "start": "react-native start",
-    "test": "jest"
+    "test": "jest",
+    "build:web": "node scripts/web.cjs --build"
   },
   "dependencies": {
     "@react-native-community/masked-view": "^0.1.10",
@@ -35,6 +36,7 @@
   "devDependencies": {
     "@babel/core": "~7.9.0",
     "babel-jest": "~25.2.6",
+    "esbuild": "0.25.12",
     "jest": "~25.2.6",
     "react-test-renderer": "~16.13.1"
   },
